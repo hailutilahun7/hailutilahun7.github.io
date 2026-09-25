@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailu Tilahun | Agricultural Scientist & Sustainable Development Specialist</title>
+    <title>Agricultural Scientist & Sustainable Development Specialist</title>
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Refreshing Light Green & Emerald System */
-            --bg-main: #F4FBF7;           /* Fresh Light Green Surface */
-            --bg-card: #FFFFFF;           /* Crisp White */
-            --green-primary: #15803D;     /* Vibrant Emerald Green */
-            --green-light: #86EFAC;       /* Refreshing Mint Light Green */
-            --green-subtle: #DCFCE7;      /* Soft Light Green Tint */
-            --green-dark: #064E3B;        /* Deep Forest Green */
-            --accent-gold: #D97706;       /* Earth Gold Accent */
-            --accent-gold-light: #FEF3C7; /* Soft Gold Tint */
+            /* Bold Light-Green Eco Palette */
+            --bg-main: #EDF7F1;           /* Bolder Light Mint Surface */
+            --bg-card: #FFFFFF;           /* Pure White Card */
+            --green-bold: #16A34A;       /* Bolder Vibrant Green */
+            --green-dark: #065F46;        /* Deep Bold Forest Green */
+            --green-subtle: #D1FAE5;      /* Rich Soft Green Tint */
+            --green-border: #86EFAC;      /* Crisp Light-Green Border */
+            --accent-gold: #D97706;       /* Warm Earth Gold Accent */
+            --accent-gold-light: #FEF3C7; /* Warm Gold Tint */
             
-            --text-dark: #0F172A;         /* Charcoal Body Text */
-            --text-muted: #475569;        /* Muted Text */
-            --border-color: #CBD5E1;     /* Light Border */
+            --text-dark: #0F172A;         /* High-Contrast Dark Text */
+            --text-muted: #334155;        /* Bolder Body Text */
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -50,12 +49,13 @@
             font-family: var(--font-display);
             color: var(--green-dark);
             line-height: 1.25;
+            font-weight: 700;
         }
 
         p {
             color: var(--text-muted);
             margin-bottom: 1.2rem;
-            font-size: 1rem;
+            font-size: 1.02rem;
         }
 
         a {
@@ -63,14 +63,15 @@
             transition: all 0.3s ease;
         }
 
-        /* Header Navigation */
+        /* Header Navigation - Name Removed */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
-            border-bottom: 2px solid var(--green-subtle);
+            border-bottom: 2px solid var(--green-border);
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(6, 95, 70, 0.05);
         }
 
         .nav-container {
@@ -84,46 +85,50 @@
 
         .logo {
             font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--green-dark);
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .logo span {
-            color: var(--green-primary);
+        .logo i {
+            color: var(--green-bold);
+            font-size: 1.4rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.1rem;
+            gap: 1rem;
             list-style: none;
         }
 
         .nav-links a {
             font-size: 0.88rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
             padding: 0.4rem 0.6rem;
             border-radius: 6px;
         }
 
         .nav-links a:hover {
-            color: var(--green-primary);
+            color: var(--green-bold);
             background: var(--green-subtle);
         }
 
         .btn-green {
-            background-color: var(--green-primary);
+            background-color: var(--green-bold);
             color: #FFFFFF !important;
             padding: 0.65rem 1.4rem;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(21, 128, 61, 0.25);
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
         }
 
         .btn-green:hover {
@@ -137,7 +142,7 @@
             padding: 0.75rem 1.6rem;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.25);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
         }
 
         .btn-gold:hover {
@@ -146,26 +151,27 @@
         }
 
         .btn-outline-green {
-            border: 2px solid var(--green-primary);
-            color: var(--green-primary) !important;
+            border: 2px solid var(--green-bold);
+            color: var(--green-bold) !important;
             padding: 0.75rem 1.6rem;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
+            background: #FFFFFF;
         }
 
         .btn-outline-green:hover {
-            background-color: var(--green-primary);
+            background-color: var(--green-bold);
             color: #FFFFFF !important;
         }
 
-        /* Light Green Hero Section */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--green-subtle) 0%, #E8F5E9 50%, #C8E6C9 100%);
+            background: linear-gradient(135deg, var(--green-subtle) 0%, #DCFCE7 50%, #BBF7D0 100%);
             color: var(--green-dark);
             padding: 6rem 2rem 5rem 2rem;
             position: relative;
             text-align: center;
-            border-bottom: 1px solid var(--green-light);
+            border-bottom: 2px solid var(--green-border);
         }
 
         .hero-container {
@@ -177,34 +183,36 @@
 
         .hero-badge {
             background: #FFFFFF;
-            border: 1px solid var(--green-primary);
-            color: var(--green-primary);
+            border: 1.5px solid var(--green-bold);
+            color: var(--green-bold);
             padding: 0.45rem 1.3rem;
             border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .hero h1 {
             color: var(--green-dark);
-            font-size: 3rem;
+            font-size: 3.1rem;
             margin-bottom: 1.2rem;
+            font-weight: 800;
         }
 
         .hero h1 span {
-            color: var(--green-primary);
+            color: var(--green-bold);
         }
 
         .hero p.lead {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             max-width: 900px;
             margin: 0 auto 2.2rem auto;
+            font-weight: 500;
         }
 
         .hero-btns {
@@ -230,22 +238,23 @@
 
         .section-title {
             text-align: center;
-            max-width: 780px;
+            max-width: 800px;
             margin: 0 auto 3.5rem auto;
         }
 
         .section-title h2 {
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 0.8rem;
             position: relative;
+            font-weight: 800;
         }
 
         .section-title h2::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 4px;
-            background: var(--green-primary);
+            background: var(--green-bold);
             margin: 0.8rem auto 0 auto;
             border-radius: 2px;
         }
@@ -258,36 +267,37 @@
         .card {
             background: var(--bg-card);
             border-radius: 14px;
-            padding: 2rem;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            padding: 2.2rem;
+            border: 1.5px solid var(--green-border);
+            box-shadow: 0 4px 15px rgba(6, 95, 70, 0.04);
             transition: all 0.3s ease;
             position: relative;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(21, 128, 61, 0.12);
-            border-color: var(--green-primary);
+            box-shadow: 0 12px 25px rgba(22, 163, 74, 0.15);
+            border-color: var(--green-bold);
         }
 
         .card-icon {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             background: var(--green-subtle);
-            color: var(--green-primary);
+            color: var(--green-bold);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1.2rem;
+            border: 1px solid var(--green-border);
         }
 
         /* At A Glance Strip */
         .glance-card {
             background: var(--bg-card);
-            border: 1px solid var(--green-subtle);
+            border: 1.5px solid var(--green-border);
             border-radius: 12px;
             padding: 1.6rem;
             text-align: center;
@@ -295,13 +305,13 @@
         }
 
         .glance-card:hover {
-            border-color: var(--green-primary);
+            border-color: var(--green-bold);
             background: #FAFFFC;
         }
 
         .glance-card i {
-            font-size: 2.2rem;
-            color: var(--green-primary);
+            font-size: 2.3rem;
+            color: var(--green-bold);
             margin-bottom: 0.8rem;
         }
 
@@ -316,10 +326,11 @@
         .pill {
             background: var(--green-subtle);
             color: var(--green-dark);
-            padding: 0.35rem 0.85rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 600;
+            font-size: 0.83rem;
+            font-weight: 700;
+            border: 1px solid var(--green-border);
         }
 
         .green-bullets {
@@ -331,6 +342,7 @@
             padding-left: 1.8rem;
             margin-bottom: 0.6rem;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         .green-bullets li::before {
@@ -340,7 +352,7 @@
             position: absolute;
             left: 0;
             top: 2px;
-            color: var(--green-primary);
+            color: var(--green-bold);
             font-size: 0.85rem;
         }
 
@@ -362,19 +374,19 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--green-subtle);
         }
 
         .process-step i {
-            color: var(--green-light);
+            color: #86EFAC;
         }
 
         /* Styled Table */
         .table-responsive {
             overflow-x: auto;
             border-radius: 12px;
-            border: 1px solid var(--green-subtle);
+            border: 1.5px solid var(--green-border);
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
@@ -386,16 +398,17 @@
         }
 
         th {
-            background-color: var(--green-primary);
+            background-color: var(--green-bold);
             color: #FFFFFF;
             padding: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         td {
             padding: 1.1rem 1.2rem;
             border-bottom: 1px solid var(--green-subtle);
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         tr:nth-child(even) {
@@ -404,16 +417,16 @@
 
         /* Contact Section Box */
         .contact-card {
-            background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+            background: linear-gradient(135deg, var(--green-dark), var(--green-bold));
             border-radius: 20px;
             padding: 3.5rem 2rem;
             color: #FFFFFF;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(6, 78, 59, 0.2);
+            box-shadow: 0 10px 30px rgba(6, 95, 70, 0.25);
         }
 
         .contact-card h2 { color: #FFFFFF; margin-bottom: 1rem; }
-        .contact-card p { color: var(--green-subtle); max-width: 650px; margin: 0 auto 2rem auto; }
+        .contact-card p { color: var(--green-subtle); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.08rem; }
 
         .contact-grid {
             display: flex;
@@ -433,15 +446,15 @@
         .contact-method i {
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--green-light);
+            color: #86EFAC;
         }
 
-        .contact-method a { color: #FFFFFF; font-weight: 600; }
+        .contact-method a { color: #FFFFFF; font-weight: 700; }
 
         .social-bar {
             display: flex;
@@ -453,7 +466,7 @@
         .social-bar a {
             width: 42px;
             height: 42px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.2);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
@@ -463,7 +476,7 @@
         }
 
         .social-bar a:hover {
-            background: var(--green-light);
+            background: #86EFAC;
             color: var(--green-dark);
         }
 
@@ -474,6 +487,7 @@
             padding: 2rem;
             text-align: center;
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
         @media (max-width: 992px) {
@@ -485,11 +499,10 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation (Name Removed) -->
     <header>
         <div class="nav-container">
-            <!-- Two extra names removed from logo header as requested -->
-            <a href="#home" class="logo">HAILU <span>TILAHUN</span></a>
+            <a href="#home" class="logo"><i class="fa-solid fa-leaf"></i> GTICDO <span>Portal</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#glance">At a Glance</a></li>
@@ -504,10 +517,10 @@
         </div>
     </header>
 
-    <!-- Light Green Hero / Home -->
+    <!-- Light Green Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
-            <span class="hero-badge"><i class="fa-solid fa-leaf"></i> Agricultural Scientist & Sustainable Development Specialist</span>
+            <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Agricultural Scientist | Researcher | Climate & Sustainable Development Specialist</span>
             <h1>Connecting <span>Science, Nature, Finance & Markets</span> for Sustainable Development</h1>
             <p class="lead">I work at the intersection of Agricultural Science, Sustainable Agriculture, Climate Action, Biodiversity Conservation, Carbon Finance, Sustainable Development, and International Markets.</p>
             <div class="hero-btns">
@@ -532,7 +545,7 @@
                     <p>I seek to build long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
                 </div>
                 <div>
-                    <div class="card" style="border-left: 5px solid var(--green-primary); margin-bottom: 1.5rem;">
+                    <div class="card" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.5rem;">
                         <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                         <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term economic and social value.</p>
@@ -980,15 +993,15 @@
             <!-- Process Flow -->
             <div class="process-flow">
                 <div class="process-step"><i class="fa-solid fa-lightbulb"></i> Concept</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-light);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
                 <div class="process-step"><i class="fa-solid fa-pen-ruler"></i> Project Design</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-light);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
                 <div class="process-step"><i class="fa-solid fa-handshake"></i> Partnership</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-light);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
                 <div class="process-step"><i class="fa-solid fa-coins"></i> Financing</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-light);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
                 <div class="process-step"><i class="fa-solid fa-gears"></i> Implementation</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-light);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
                 <div class="process-step"><i class="fa-solid fa-chart-line"></i> Monitoring & Impact</div>
             </div>
         </div>
@@ -1066,7 +1079,7 @@
             </div>
 
             <!-- Transparency Box -->
-            <div class="card" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: var(--green-light);">
+            <div class="card" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: var(--green-border);">
                 <h3>Transparency & Accountability Commitment</h3>
                 <p>I am committed to professional standards of transparency, accountability, ethical conduct, responsible resource management, evidence-based decision-making, and measurable results. For funded projects and partnerships, appropriate documentation may include:</p>
                 <div class="pill-list">
