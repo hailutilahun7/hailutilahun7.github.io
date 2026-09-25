@@ -3,923 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hailu Tilahun Kebede | Agricultural Scientist & Sustainable Development Specialist</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Animal Scientist & Climate Specialist Portfolio</title>
     <style>
         :root {
-            /* Dynamic Vibrant Color System */
-            --bg-dark: #04130A;         /* Ultra Deep Obsidian Green */
-            --bg-surface: #0A2315;      /* Rich Dark Emerald */
-            --primary-green: #00E676;   /* Electric Neon Mint */
-            --secondary-green: #10B981; /* Vibrant Emerald */
-            --gold-accent: #F59E0B;     /* Warm Gold / Sun Accent */
-            --gold-light: #FDE68A;      /* Light Gold Glow */
-            --text-main: #0F172A;       /* Crisp Charcoal for Light BG */
-            --text-muted: #475569;      /* Muted Slate */
-            --light-bg: #F0FDF4;        /* Fresh Ice Green Tint */
-            --white: #FFFFFF;
-            
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-body: 'Outfit', sans-serif;
+            --primary: #0f382c;
+            --accent: #2d6a4f;
+            --accent-light: #52b788;
+            --light-bg: #f4f8f5;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --border: #d8f3dc;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            font-family: var(--font-body);
             color: var(--text-main);
-            background-color: #FAFAFA;
+            background-color: var(--light-bg);
             line-height: 1.6;
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5 {
-            font-family: var(--font-display);
-            color: var(--bg-dark);
-            line-height: 1.2;
-        }
-
-        p {
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-        }
-
-        a {
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        /* Glassmorphism Header */
-        header {
+        /* Navigation Header */
+        nav {
+            background: var(--primary);
             position: sticky;
             top: 0;
-            background: rgba(4, 19, 10, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 230, 118, 0.2);
             z-index: 1000;
+            box-shadow: var(--shadow);
+            border-bottom: 2px solid var(--accent);
         }
 
         .nav-container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            padding: 1.1rem 2rem;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary-green);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.2rem;
-            list-style: none;
+            padding: 1.2rem 1.5rem;
         }
 
         .nav-links a {
+            color: #d8f3dc;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: 600;
             font-size: 0.9rem;
-            font-weight: 500;
-            color: #CBD5E1;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-green);
-            background: rgba(255,255,255,0.05);
+            color: #ffffff;
         }
 
-        .btn-gradient {
-            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
-            color: var(--bg-dark) !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 20px rgba(0, 230, 118, 0.35);
-        }
-
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 230, 118, 0.5);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold-accent), #D97706);
-            color: var(--white) !important;
-            padding: 0.75rem 1.6rem;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-        }
-
-        .btn-outline-light {
-            border: 2px solid rgba(255,255,255,0.3);
-            color: var(--white) !important;
-            padding: 0.75rem 1.6rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .btn-outline-light:hover {
-            border-color: var(--primary-green);
-            color: var(--primary-green) !important;
-        }
-
-        /* High Impact Hero */
+        /* Hero Header */
         .hero {
-            background: radial-gradient(circle at top right, #0A321C, var(--bg-dark));
-            color: var(--white);
-            padding: 7rem 2rem 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 80px;
-            background: linear-gradient(to top, #FAFAFA, transparent);
-        }
-
-        .hero-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            background: linear-gradient(135deg, var(--primary) 0%, #1b4332 100%);
+            color: #ffffff;
+            padding: 4rem 1.5rem;
             text-align: center;
         }
 
-        .hero-badge {
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 0.5rem 1.4rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-block;
-            margin-bottom: 1.8rem;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.2rem;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--primary-green), var(--gold-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p.lead {
-            color: #94A3B8;
-            font-size: 1.2rem;
+        .hero-container {
             max-width: 900px;
-            margin: 0 auto 2.5rem auto;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        /* Section Layouts */
-        section {
-            padding: 5.5rem 2rem;
-        }
-
-        .container {
-            max-width: 1240px;
             margin: 0 auto;
         }
 
-        .bg-mint-soft {
-            background-color: var(--light-bg);
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-light);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+            margin-bottom: 1.5rem;
         }
 
-        .bg-dark-emerald {
-            background-color: var(--bg-surface);
-            color: var(--white);
+        .hero h1 {
+            font-size: 1.8rem;
+            color: var(--accent-light);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
         }
 
-        .bg-dark-emerald h2, .bg-dark-emerald h3, .bg-dark-emerald h4 {
-            color: var(--white);
+        .hero p {
+            font-size: 1.05rem;
+            color: #e8f5e9;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-light);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #74c69d;
+        }
+
+        .btn-outline {
+            border: 2px solid #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
         }
 
         .section-title {
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto 3.5rem auto;
-        }
-
-        .section-title h2 {
-            font-size: 2.4rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
             position: relative;
         }
 
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             display: block;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--gold-accent));
-            margin: 0.8rem auto 0 auto;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 0.5rem auto 0;
             border-radius: 2px;
         }
 
-        /* Modern Card System */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        /* Grids and Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
 
         .card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2.2rem;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.15);
-            border-color: var(--secondary-green);
-        }
-
-        .card-icon {
-            width: 55px;
-            height: 55px;
-            background: var(--light-bg);
-            color: var(--secondary-green);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.4rem;
-        }
-
-        /* Dark Card Variant */
-        .card-dark {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 2rem;
-            color: var(--white);
-        }
-
-        .card-dark h3, .card-dark h4 { color: var(--white); }
-        .card-dark p { color: #94A3B8; }
-
-        /* At A Glance Grid */
-        .glance-card {
-            background: var(--white);
-            border: 1px solid #E2E8F0;
-            border-radius: 14px;
+            background: var(--card-bg);
             padding: 1.8rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
         }
 
-        .glance-card:hover {
-            border-color: var(--gold-accent);
-            background: #FFFDF5;
-        }
-
-        .glance-card i {
-            font-size: 2.2rem;
-            background: linear-gradient(135deg, var(--secondary-green), var(--gold-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
             margin-bottom: 0.8rem;
         }
 
-        /* Vibrant Pills */
-        .pill-list {
+        .card ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            color: var(--text-main);
+        }
+
+        .card ul li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .tag-cloud {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1.2rem;
-        }
-
-        .pill {
-            background: #E6F4EA;
-            color: #065F46;
-            padding: 0.4rem 0.9rem;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        /* Process Bar */
-        .process-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-dark);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(0,230,118,0.2);
-            color: var(--white);
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2.5rem;
-        }
-
-        .process-step {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .process-step i {
-            color: var(--primary-green);
-        }
-
-        /* Modern Styled Table */
-        .table-responsive {
-            overflow-x: auto;
-            border-radius: 14px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #E2E8F0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            text-align: left;
-        }
-
-        th {
-            background: var(--bg-dark);
-            color: var(--primary-green);
-            padding: 1.2rem;
-            font-family: var(--font-display);
-            font-weight: 700;
-        }
-
-        td {
-            padding: 1.1rem 1.2rem;
-            border-bottom: 1px solid #E2E8F0;
-            color: var(--text-muted);
-        }
-
-        tr:nth-child(even) {
-            background-color: #F8FAFC;
-        }
-
-        /* Contact Box */
-        .contact-card {
-            background: linear-gradient(135deg, var(--bg-dark), var(--bg-surface));
-            border-radius: 24px;
-            padding: 4rem 2rem;
-            color: var(--white);
-            text-align: center;
-            border: 1px solid rgba(0,230,118,0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-card h2 { color: var(--white); margin-bottom: 1rem; }
-        .contact-card p { color: #94A3B8; max-width: 650px; margin: 0 auto 2.5rem auto; }
-
-        .contact-grid {
-            display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #e8f5e9;
+            color: var(--primary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .text-block {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            color: var(--text-main);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Footer & Social Media */
+        .footer-social-title {
+            color: var(--accent-light);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-grid {
+            display: flex;
             flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
             margin-bottom: 2rem;
         }
 
-        .contact-method {
-            display: flex;
+        .social-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-            background: rgba(255,255,255,0.05);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .contact-method i {
-            color: var(--primary-green);
-            font-size: 1.3rem;
-        }
-
-        .contact-method a { color: var(--white); font-weight: 600; }
-
-        .social-bar {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-bar a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.08);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-bar a:hover {
-            background: var(--primary-green);
-            color: var(--bg-dark);
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-dark);
-            color: #64748B;
-            padding: 2rem;
-            text-align: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            color: #ffffff;
+            font-weight: 600;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: var(--shadow);
         }
 
-        @media (max-width: 992px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .process-flow { flex-direction: column; align-items: flex-start; }
+        .social-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .social-btn.linkedin { background-color: #0a66c2; }
+        .social-btn.whatsapp { background-color: #25d366; }
+        .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-btn.telegram { background-color: #0088cc; }
+        .social-btn.facebook { background-color: #1877f2; }
+        .social-btn.twitter { background-color: #1da1f2; }
+
+        footer {
+            background: var(--primary);
+            color: #d8f3dc;
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
+    <!-- Navigation Header -->
+    <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">HAILU TILAHUN <span>KEBEDE</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#glance">At a Glance</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#partnerships">Partnerships</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#consulting">Consulting</a></li>
-            </ul>
-            <a href="#contact" class="btn-gradient"><i class="fa-solid fa-paper-plane"></i> Let's Connect</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#impact">Areas of Impact</a>
+                <a href="#partnerships">Partnerships</a>
+                <a href="#research">Research</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <img src="photo_2025-11-24_14-14-04.jpg" alt="Profile Photo" class="profile-img">
+            <h1>Animal Scientist | Researcher | Climate & Sustainable Development Specialist</h1>
+            <p>Connecting Science, Nature, Finance & Markets for Sustainable Development</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                <a href="#impact" class="btn btn-outline">Explore Areas of Impact</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero / Home -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Agricultural Scientist & Sustainable Development Specialist</span>
-            <h1>Connecting <span>Science, Nature, Finance & Markets</span> for Impact</h1>
-            <p class="lead">Integrating Agricultural Science, Climate Action, Biodiversity Conservation, Carbon Credit Finance, and International Value Chains across Ethiopia and Africa.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn-gold"><i class="fa-solid fa-handshake"></i> Partner With Me</a>
-                <a href="#projects" class="btn-outline-light"><i class="fa-solid fa-compass"></i> Explore Projects</a>
-            </div>
-        </div>
-    </section>
+    <div class="container">
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="grid-2" style="align-items: center;">
-                <div>
-                    <div style="text-align: left;" class="section-title">
-                        <h2>From Science to Sustainable Impact</h2>
-                    </div>
-                    <p><strong>Hailu Tilahun Kebede</strong> is an Agricultural Scientist and Researcher with an MSc in Animal Breeding and Genetics and over eight years of experience in research, academic instruction, and community-based development.</p>
-                    <p>His professional work has expanded into an integrated development approach connecting: <strong>Science | Agriculture | Climate | Nature | Finance | Markets | Communities</strong>.</p>
-                    <p>This multidisciplinary perspective supports practical solutions addressing interconnected challenges including climate change, food security, biodiversity loss, livestock productivity, and access to international markets. He has also actively contributed to youth leadership and climate action through COP programs and UNFCCC processes.</p>
-                </div>
-                <div>
-                    <div class="card" style="border-top: 5px solid var(--secondary-green); margin-bottom: 1.5rem;">
-                        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
-                        <h3>Mission</h3>
-                        <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term social value.</p>
-                    </div>
-                    <div class="card" style="border-top: 5px solid var(--gold-accent);">
-                        <div class="card-icon" style="color: var(--gold-accent);"><i class="fa-solid fa-eye"></i></div>
-                        <h3>Vision</h3>
-                        <p>A future where science, sustainable finance, responsible investment, nature, agriculture, and international partnerships work together to build resilient communities and inclusive prosperity.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- At A Glance Section -->
-    <section id="glance" class="bg-mint-soft">
-        <div class="container">
-            <div class="section-title">
-                <h2>At a Glance</h2>
-                <p>An integrated ecosystem connecting local potential with global opportunity.</p>
-            </div>
-            <div class="grid-3">
-                <div class="glance-card">
-                    <i class="fa-solid fa-dna"></i>
-                    <h4>Science & Genetics</h4>
-                    <p>Animal breeding, livestock genetics, genomics, GWAS, genetic resource conservation, and sustainable livestock systems.</p>
-                </div>
-                <div class="glance-card">
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
-                    <h4>Climate & Carbon</h4>
-                    <p>Carbon-credit development, climate finance, mitigation, adaptation, climate-smart agriculture, and climate resilience.</p>
-                </div>
-                <div class="glance-card">
-                    <i class="fa-solid fa-tree"></i>
-                    <h4>Nature & Biodiversity</h4>
-                    <p>Biodiversity conservation, agroforestry, ecosystem restoration, regenerative agriculture, and nature-based solutions.</p>
-                </div>
-                <div class="glance-card">
-                    <i class="fa-solid fa-wheat-awn"></i>
-                    <h4>Agriculture & Food Systems</h4>
-                    <p>Agroecology, food security, resilient food systems, value chains, community production, and sustainable livelihoods.</p>
-                </div>
-                <div class="glance-card">
-                    <i class="fa-solid fa-mug-hot"></i>
-                    <h4>Coffee & Global Markets</h4>
-                    <p>Sustainable coffee production, value-chain development, export, international market linkage, and agricultural investment.</p>
-                </div>
-                <div class="glance-card">
-                    <i class="fa-solid fa-users"></i>
-                    <h4>Inclusive Development</h4>
-                    <p>Youth empowerment, women's economic participation, community development, capacity building, and sustainable livelihoods.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Partner Section -->
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Partner With Me?</h2>
-                <p>Connecting Local Potential With Global Opportunity</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-microscope"></i></div>
-                    <h3>Scientific Expertise</h3>
-                    <p>Foundation in animal science, breeding, genetics, genomics, agricultural research, and production systems.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
-                    <h3>Climate & Sustainability</h3>
-                    <p>Experience across climate mitigation, adaptation, climate-smart agriculture, biodiversity, carbon markets, and finance.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
-                    <h3>Community Perspective</h3>
-                    <p>Strong focus on smallholder farmers, youth, women, sustainable livelihoods, and inclusive development.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                    <h3>Project Development</h3>
-                    <p>Translating ambitious ideas into structured projects, partnerships, investment opportunities, and scalable initiatives.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                    <h3>International Orientation</h3>
-                    <p>Dedicated to building relationships with international foundations, donors, NGOs, investors, and research institutions.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Measurable Impact</h3>
-                    <p>Integrating science, investment, implementation, and rigorous monitoring to deliver verified long-term value.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="bg-mint-soft">
-        <div class="container">
-            <div class="section-title">
-                <h2>Areas of Expertise</h2>
-                <p>Multidisciplinary capabilities built over 8+ years of scientific research and field leadership.</p>
-            </div>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">01</h4>
-                    <h3>Livestock Science & Farming</h3>
-                    <div class="pill-list">
-                        <span class="pill">Livestock Management</span>
-                        <span class="pill">Dairy, Beef, Sheep & Poultry</span>
-                        <span class="pill">Animal Nutrition & Feed</span>
-                        <span class="pill">Breeding & Herd Improvement</span>
-                        <span class="pill">Pasture & Forage</span>
-                        <span class="pill">Integrated Crop–Livestock</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">02</h4>
-                    <h3>Climate, Carbon & Finance</h3>
-                    <div class="pill-list">
-                        <span class="pill">Carbon Credit Development</span>
-                        <span class="pill">Climate Finance</span>
-                        <span class="pill">Climate Mitigation & Adaptation</span>
-                        <span class="pill">Climate-Smart Agriculture</span>
-                        <span class="pill">Climate Resilience</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">03</h4>
-                    <h3>Biodiversity & Restoration</h3>
-                    <div class="pill-list">
-                        <span class="pill">Biodiversity Conservation</span>
-                        <span class="pill">Agroforestry</span>
-                        <span class="pill">Ecosystem Restoration</span>
-                        <span class="pill">Sustainable Land Management</span>
-                        <span class="pill">Nature-Based Solutions</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">04</h4>
-                    <h3>Agriculture & Food Systems</h3>
-                    <div class="pill-list">
-                        <span class="pill">Sustainable Agriculture</span>
-                        <span class="pill">Agroecology</span>
-                        <span class="pill">Climate-Smart Production</span>
-                        <span class="pill">Food System Resilience</span>
-                        <span class="pill">Agricultural Value Chains</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">05</h4>
-                    <h3>Coffee & International Trade</h3>
-                    <div class="pill-list">
-                        <span class="pill">Sustainable Coffee Production</span>
-                        <span class="pill">Coffee Export</span>
-                        <span class="pill">International Market Linkage</span>
-                        <span class="pill">Agricultural Investment</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--gold-accent); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">06</h4>
-                    <h3>Community & Inclusive Growth</h3>
-                    <div class="pill-list">
-                        <span class="pill">Youth Empowerment</span>
-                        <span class="pill">Women's Participation</span>
-                        <span class="pill">Capacity Building</span>
-                        <span class="pill">Green Livelihoods</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Strategic Projects -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Strategic Projects</h2>
-                <p>From Ideas to Investable and Fundable Initiatives</p>
-            </div>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>01 — Climate & Carbon</h3>
-                    <p>Carbon credit development, climate mitigation, adaptation, climate-smart agriculture, and nature-based climate finance solutions.</p>
-                </div>
-                <div class="card">
-                    <h3>02 — Biodiversity & Restoration</h3>
-                    <p>Forest and landscape restoration, ecosystem rehabilitation, agroforestry systems, and community-led conservation.</p>
-                </div>
-                <div class="card">
-                    <h3>03 — Sustainable Livestock</h3>
-                    <p>Animal breeding, genetic improvement, climate-resilient animal feed production, and smallholder livestock development.</p>
-                </div>
-                <div class="card">
-                    <h3>04 — Coffee & Trade</h3>
-                    <p>Quality improvement, value-chain development, sustainable export models, and direct international market linkage.</p>
-                </div>
-                <div class="card">
-                    <h3>05 — Youth & Women</h3>
-                    <p>Green jobs, skills development, youth entrepreneurship hubs, and women's economic participation in agriculture.</p>
-                </div>
-                <div class="card">
-                    <h3>06 — Research & Innovation</h3>
-                    <p>Joint agricultural research, animal genetics, climate adaptation studies, technology transfer, and evidence-based development.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partnerships Section -->
-    <section id="partnerships" class="bg-dark-emerald">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: var(--white);">Partnership Opportunities</h2>
-                <p style="color: #94A3B8;">Building International Partnerships based on Trust, Evidence, Transparency, and Long-Term Impact.</p>
-            </div>
-
-            <!-- Target Partners Grid -->
-            <div class="grid-4" style="margin-bottom: 3rem;">
-                <div class="card-dark" style="text-align: center;">
-                    <i class="fa-solid fa-building-columns" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 0.8rem;"></i>
-                    <h4>International Foundations</h4>
-                </div>
-                <div class="card-dark" style="text-align: center;">
-                    <i class="fa-solid fa-hand-holding-dollar" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 0.8rem;"></i>
-                    <h4>Donors & Grant Makers</h4>
-                </div>
-                <div class="card-dark" style="text-align: center;">
-                    <i class="fa-solid fa-globe" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 0.8rem;"></i>
-                    <h4>NGOs & Civil Society</h4>
-                </div>
-                <div class="card-dark" style="text-align: center;">
-                    <i class="fa-solid fa-chart-pie" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 0.8rem;"></i>
-                    <h4>Impact Investors</h4>
-                </div>
-            </div>
-
-            <!-- Table -->
-            <div class="table-responsive" style="margin-bottom: 3rem;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Opportunity Area</th>
-                            <th>Focus Scope</th>
-                            <th>Partnership Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Climate & Carbon</strong></td>
-                            <td>Carbon projects, adaptation, climate finance</td>
-                            <td>Investment / Grant</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Biodiversity</strong></td>
-                            <td>Conservation, ecosystem restoration, nature-based solutions</td>
-                            <td>Grant / Climate Finance</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sustainable Agriculture</strong></td>
-                            <td>Smallholder farmers, livestock, food systems</td>
-                            <td>Grant / Investment</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Coffee & Trade</strong></td>
-                            <td>Production, value chain, export, market access</td>
-                            <td>Investment / Trade</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Youth & Women</strong></td>
-                            <td>Enterprise, green jobs, skills, livelihoods</td>
-                            <td>Grant / NGO Partnership</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Research</strong></td>
-                            <td>Genetics, agriculture, genomics, climate</td>
-                            <td>Research Grant / University</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Process Flow -->
-            <div class="process-flow">
-                <div class="process-step"><i class="fa-solid fa-lightbulb"></i> Concept</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--gold-accent);"></i>
-                <div class="process-step"><i class="fa-solid fa-pen-ruler"></i> Project Design</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--gold-accent);"></i>
-                <div class="process-step"><i class="fa-solid fa-handshake"></i> Partnership</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--gold-accent);"></i>
-                <div class="process-step"><i class="fa-solid fa-coins"></i> Financing</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--gold-accent);"></i>
-                <div class="process-step"><i class="fa-solid fa-gears"></i> Implementation</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--gold-accent);"></i>
-                <div class="process-step"><i class="fa-solid fa-chart-line"></i> Monitoring & Impact</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research & Consulting -->
-    <section id="research">
-        <div class="container">
-            <div class="section-title">
-                <h2>Research & Consulting Services</h2>
-                <p>Translating Scientific Research and Technical Writing into Practical Field Programs</p>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Research Focus</h3>
-                    <p>Interdisciplinary studies across <strong>Animal Science, Genetics, Climate Resilience, Biodiversity, and Land Use</strong> to deliver evidence-based solutions for smallholder farmers and development partners.</p>
-                    <div class="pill-list">
-                        <span class="pill">Animal Breeding & GWAS</span>
-                        <span class="pill">Livestock Genomics</span>
-                        <span class="pill">Agroecology</span>
-                        <span class="pill">Feed Production</span>
-                    </div>
-                </div>
-                <div class="card" id="consulting">
-                    <h3>Organizational Consulting</h3>
-                    <p>Supporting NGOs, CSOs, and private enterprises in developing high-quality, fundable program documentation:</p>
-                    <div class="pill-list">
-                        <span class="pill">Grant Proposals</span>
-                        <span class="pill">Concept Notes</span>
-                        <span class="pill">Project Budgets</span>
-                        <span class="pill">MEL Frameworks</span>
-                        <span class="pill">Business Plans</span>
-                        <span class="pill">Feasibility Studies</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-card">
-                <h2>Let's Build Sustainable Solutions Together</h2>
-                <p>If you are an international donor, foundation, impact investor, NGO, or research institution, I welcome the opportunity to explore partnership.</p>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="text-block">
+                <p style="margin-bottom: 1.2rem;">
+                    <strong>Hailu Tilahun Kebede</strong> is an Animal Scientist and Researcher with an MSc in Animal Breeding and Genetics and over eight years of experience in livestock research, academic instruction, and community-based development. His work bridges science, sustainable agriculture, climate action, biodiversity, climate finance, and international markets to develop practical, inclusive, and sustainable solutions. He combines technical expertise with community-focused approaches to improve agricultural productivity, resilience, sustainable livelihoods, and opportunities for farmers, women, and youth.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    I work at the intersection of science, agricultural innovation, climate action, biodiversity conservation, carbon finance, sustainable development, and international markets. My work connects scientific research and practical implementation to help develop climate-resilient livelihoods, sustainable agricultural systems, nature-positive solutions, and international partnerships.
+                </p>
                 
-                <div class="contact-grid">
-                    <div class="contact-method">
-                        <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">At a Glance</h3>
+                <div class="grid">
+                    <div style="background: var(--light-bg); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                        <strong>Animal Science & Genetics:</strong> Animal breeding, livestock genetics, genomics, GWAS, genetic-resource conservation, and sustainable livestock systems.
                     </div>
-                    <div class="contact-method">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <a href="https://wa.me/251910204390">+251 910 204 390</a>
+                    <div style="background: var(--light-bg); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                        <strong>Climate & Carbon:</strong> Carbon-credit development, climate finance, mitigation, adaptation, climate-smart agriculture, and climate-resilient development.
                     </div>
-                </div>
-
-                <div class="social-bar">
-                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/251910204390" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div style="background: var(--light-bg); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                        <strong>Nature & Agriculture:</strong> Biodiversity conservation, agroforestry, ecosystem restoration, regenerative agriculture, and sustainable land management.
+                    </div>
+                    <div style="background: var(--light-bg); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--accent);">
+                        <strong>Coffee & International Markets:</strong> Sustainable coffee production, value-chain development, export, international market linkage, and agricultural trade partnerships.
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hailu Tilahun Kebede. All Rights Reserved.</p>
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <h2 class="section-title">Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>01 — Animal Science & Livestock</h3>
+                    <ul>
+                        <li>Animal Breeding & Genetics</li>
+                        <li>Livestock Genomics & GWAS</li>
+                        <li>Genetic Resource Conservation</li>
+                        <li>Sustainable Livestock Production</li>
+                        <li>Climate-Resilient Livestock Systems</li>
+                        <li>Agricultural Research & Innovation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>02 — Climate, Carbon & Sustainable Finance</h3>
+                    <ul>
+                        <li>Carbon Credit Development</li>
+                        <li>Climate Finance</li>
+                        <li>Climate Mitigation & Adaptation</li>
+                        <li>Climate-Smart Agriculture</li>
+                        <li>Climate-Resilient Development</li>
+                        <li>Sustainable Investment</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>03 — Biodiversity, Nature & Restoration</h3>
+                    <ul>
+                        <li>Biodiversity Conservation</li>
+                        <li>Agroforestry</li>
+                        <li>Ecosystem Restoration</li>
+                        <li>Sustainable Land Management</li>
+                        <li>Regenerative Agriculture</li>
+                        <li>Nature-Based Solutions</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>04 — Agriculture & Food Systems</h3>
+                    <ul>
+                        <li>Sustainable Agriculture</li>
+                        <li>Agroecology</li>
+                        <li>Climate-Smart Production</li>
+                        <li>Sustainable Food Systems</li>
+                        <li>Community-Based Agriculture</li>
+                        <li>Sustainable Development Goals</li>
+                        <li>Agricultural Value Chains</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>05 — Coffee & Global Trade</h3>
+                    <ul>
+                        <li>Sustainable Coffee Production</li>
+                        <li>Coffee Export</li>
+                        <li>International Market Linkage</li>
+                        <li>Agricultural Investment & Trade Partnerships</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas of Impact Section -->
+        <section id="impact">
+            <h2 class="section-title">Areas of Impact</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Climate & Carbon</h3>
+                    <p>Developing approaches that connect climate action with sustainable finance, including carbon markets, climate mitigation, adaptation, and climate-resilient development.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Nature & Biodiversity</h3>
+                    <p>Supporting biodiversity conservation, agroforestry, ecosystem restoration, and nature-based solutions that strengthen ecosystems while creating benefits for communities.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Sustainable Agriculture</h3>
+                    <p>Promoting agricultural systems that improve productivity, resilience, environmental sustainability, and long-term livelihoods.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Livestock & Genetic Resources</h3>
+                    <p>Applying animal science, genetics, genomics, and research to strengthen livestock productivity, resilience, and genetic-resource conservation.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Coffee & Global Markets</h3>
+                    <p>Connecting Ethiopia's agricultural production with international markets, investment opportunities, value-chain development, and sustainable trade.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Inclusive Community Development</h3>
+                    <p>Supporting approaches that create opportunities for youth, women, farmers, communities, researchers, institutions, and private-sector partners.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnerships Section -->
+        <section id="partnerships">
+            <h2 class="section-title">Partnerships</h2>
+            <div class="text-block">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Building International Partnerships for Practical Impact</h3>
+                <p style="text-align: center; margin-bottom: 1.5rem;">I collaborate with organizations and institutions across research, government, development, agriculture, climate, finance, investment, trade, and civil society.</p>
+                
+                <p style="margin-bottom: 0.5rem;"><strong>Potential Collaboration Partners:</strong></p>
+                <div class="tag-cloud" style="margin-bottom: 2rem; justify-content: flex-start;">
+                    <span class="tag">Universities & Research Institutions</span>
+                    <span class="tag">Governments & Public Institutions</span>
+                    <span class="tag">International Organizations</span>
+                    <span class="tag">Development Partners</span>
+                    <span class="tag">NGOs & Civil Society Organizations</span>
+                    <span class="tag">Private-Sector Companies</span>
+                    <span class="tag">Investors & Financial Institutions</span>
+                    <span class="tag">Agricultural Producers & Cooperatives</span>
+                    <span class="tag">Climate & Carbon-Market Organizations</span>
+                    <span class="tag">International Buyers & Trading Partners</span>
+                </div>
+
+                <p style="margin-bottom: 0.5rem;"><strong>Partnership Areas:</strong></p>
+                <p style="color: var(--accent); font-weight: 600;">
+                    Research | Climate Action | Carbon Finance | Agriculture | Biodiversity | Investment | Trade | Innovation | Sustainable Development
+                </p>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2 class="section-title">Research</h2>
+            <div class="text-block">
+                <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Research for Resilient Food Systems and Communities</h3>
+                <p style="margin-bottom: 1.2rem;">My research interests focus on the relationship between: <strong>Animal Science | Genetics | Agriculture | Climate Resilience | Biodiversity | Sustainable Land Use | Community Development</strong></p>
+                <p style="margin-bottom: 1.5rem;">The objective is to translate research and evidence into practical solutions that can benefit farmers, communities, institutions, businesses, and development partners.</p>
+                
+                <h4 style="color: var(--primary); margin-bottom: 0.8rem;">Research Interests</h4>
+                <div class="tag-cloud" style="justify-content: flex-start;">
+                    <span class="tag">Animal Breeding & Genetics</span>
+                    <span class="tag">Livestock Genomics</span>
+                    <span class="tag">Agricultural Innovation</span>
+                    <span class="tag">Climate-Smart Agriculture</span>
+                    <span class="tag">Sustainable Livestock Systems</span>
+                    <span class="tag">Biodiversity & Genetic Resources</span>
+                    <span class="tag">Agroecology</span>
+                    <span class="tag">Climate Resilience</span>
+                    <span class="tag">Sustainable Development</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Projects & Initiatives Section -->
+        <section id="projects">
+            <h2 class="section-title">Projects & Initiatives</h2>
+            <div class="text-block">
+                <p style="margin-bottom: 1.5rem;">My current project interests and initiatives focus on translating ideas into practical, scalable solutions.</p>
+                <div class="grid">
+                    <div class="card" style="border-top-color: var(--accent-light);">
+                        <h3>Climate & Carbon</h3>
+                        <p>Carbon-credit development, climate finance, mitigation, adaptation, and climate-resilient development.</p>
+                    </div>
+                    <div class="card" style="border-top-color: var(--accent-light);">
+                        <h3>Agriculture & Livestock</h3>
+                        <p>Sustainable livestock systems, animal genetic improvement, climate-smart agriculture, and resilient food systems.</p>
+                    </div>
+                    <div class="card" style="border-top-color: var(--accent-light);">
+                        <h3>Nature & Biodiversity</h3>
+                        <p>Biodiversity conservation, agroforestry, ecosystem restoration, and nature-based solutions.</p>
+                    </div>
+                    <div class="card" style="border-top-color: var(--accent-light);">
+                        <h3>Coffee & International Trade</h3>
+                        <p>Sustainable coffee production, value-chain development, export, international market linkage, and agricultural investment.</p>
+                    </div>
+                    <div class="card" style="border-top-color: var(--accent-light); grid-column: 1 / -1;">
+                        <h3>Inclusive Community & Youth Development</h3>
+                        <p>Inclusive development, youth empowerment, women's economic participation, capacity building, and community-based initiatives. Supporting approaches that create opportunities for youth, women, farmers, communities, researchers, institutions, and private-sector partners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaboration Section -->
+        <section>
+            <h2 class="section-title">Collaboration</h2>
+            <div class="text-block" style="text-align: center;">
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem;">Let's Turn Ideas Into Impact</h3>
+                <p style="margin-bottom: 1.5rem;">I am open to strategic collaboration with organizations and individuals seeking to develop credible, practical, scalable, and sustainable solutions.</p>
+                
+                <p style="margin-bottom: 0.8rem;"><strong>Potential areas of collaboration:</strong></p>
+                <div class="tag-cloud">
+                    <span class="tag">Research Collaboration</span>
+                    <span class="tag">Strategic Partnerships</span>
+                    <span class="tag">Climate & Carbon Finance</span>
+                    <span class="tag">Agricultural Investment</span>
+                    <span class="tag">Nature & Biodiversity Projects</span>
+                    <span class="tag">Sustainable Development Initiatives</span>
+                    <span class="tag">International Trade</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Contacts & Footer -->
+    <footer id="contact">
+        <h2 style="font-size: 1.6rem; margin-bottom: 1rem; color: #ffffff;">Let's Connect</h2>
+        <p style="margin-bottom: 0.5rem; font-size: 1rem;">
+            <strong>Email:</strong> <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
+        </p>
+        <p style="margin-bottom: 1.5rem; font-size: 1rem;">
+            <strong>WhatsApp / Mobile:</strong> <a href="tel:+251910204390">+251 910 204 390</a>
+        </p>
+
+        <!-- Social Media Links -->
+        <p class="footer-social-title">Follow Me</p>
+        <div class="social-grid">
+            <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" class="social-btn linkedin">LinkedIn</a>
+            <a href="https://wa.me/251910204390" target="_blank" class="social-btn whatsapp">WhatsApp</a>
+            <a href="https://instagram.com/YOUR-INSTAGRAM-USERNAME" target="_blank" class="social-btn instagram">Instagram</a>
+            <a href="https://t.me/YOUR-TELEGRAM-USERNAME" target="_blank" class="social-btn telegram">Telegram</a>
+            <a href="https://facebook.com/YOUR-FACEBOOK-USERNAME" target="_blank" class="social-btn facebook">Facebook</a>
+            <a href="https://twitter.com/YOUR-TWITTER-USERNAME" target="_blank" class="social-btn twitter">X</a>
         </div>
+
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8;">&copy; 2026 Hailu Tilahun Kebede. All Rights Reserved.</p>
     </footer>
 
 </body>
