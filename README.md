@@ -20,6 +20,10 @@
             --accent-gold: #D97706;       /* Warm Earth Gold Accent */
             --accent-gold-light: #FEF3C7; /* Warm Gold Tint */
             
+            /* Light-Medium End Colors */
+            --end-bg-medium: #3B7A57;     /* Light-Medium Sage Green */
+            --end-bg-light: #E8F5EE;      /* Soft Light Sage Tint */
+            
             --text-dark: #0F172A;         /* High-Contrast Dark Text */
             --text-muted: #334155;        /* Bolder Body Text */
             
@@ -63,7 +67,7 @@
             transition: all 0.3s ease;
         }
 
-        /* Header Navigation - Name Removed */
+        /* Header Navigation - Logo removed */
         header {
             position: sticky;
             top: 0;
@@ -78,25 +82,10 @@
             max-width: 1280px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Aligns menu items seamlessly */
             align-items: center;
             padding: 1.1rem 2rem;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--green-dark);
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo i {
-            color: var(--green-bold);
-            font-size: 1.4rem;
+            gap: 1.5rem;
         }
 
         .nav-links {
@@ -415,18 +404,19 @@
             background-color: var(--green-subtle);
         }
 
-        /* Contact Section Box */
+        /* Light-Medium End Color Contact Box */
         .contact-card {
-            background: linear-gradient(135deg, var(--green-dark), var(--green-bold));
+            background: linear-gradient(135deg, var(--end-bg-medium), #2D5E43);
             border-radius: 20px;
             padding: 3.5rem 2rem;
             color: #FFFFFF;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(6, 95, 70, 0.25);
+            box-shadow: 0 10px 30px rgba(59, 122, 87, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-card h2 { color: #FFFFFF; margin-bottom: 1rem; }
-        .contact-card p { color: var(--green-subtle); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.08rem; }
+        .contact-card p { color: var(--end-bg-light); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.08rem; }
 
         .contact-grid {
             display: flex;
@@ -446,12 +436,12 @@
         .contact-method i {
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #86EFAC;
+            color: #FFFFFF;
         }
 
         .contact-method a { color: #FFFFFF; font-weight: 700; }
@@ -476,22 +466,24 @@
         }
 
         .social-bar a:hover {
-            background: #86EFAC;
-            color: var(--green-dark);
+            background: #FFFFFF;
+            color: var(--end-bg-medium);
         }
 
-        /* Footer */
+        /* Light-Medium End Color Footer */
         footer {
-            background: var(--green-dark);
-            color: var(--green-subtle);
+            background: var(--end-bg-medium);
+            color: var(--end-bg-light);
             padding: 2rem;
             text-align: center;
             font-size: 0.9rem;
             font-weight: 500;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 992px) {
             .nav-links { display: none; }
+            .nav-container { justify-content: center; }
             .hero h1 { font-size: 2.2rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
         }
@@ -499,10 +491,9 @@
 </head>
 <body>
 
-    <!-- Header Navigation (Name Removed) -->
+    <!-- Header Navigation (Header Logo Removed) -->
     <header>
         <div class="nav-container">
-            <a href="#home" class="logo"><i class="fa-solid fa-leaf"></i> GTICDO <span>Portal</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#glance">At a Glance</a></li>
@@ -1107,7 +1098,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Light-Medium Color -->
     <section id="contact">
         <div class="container">
             <div class="contact-card">
@@ -1118,14 +1109,14 @@
                     <div class="contact-method">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--green-subtle);">Direct Email</div>
+                            <div style="font-size: 0.8rem; color: var(--end-bg-light);">Direct Email</div>
                             <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-method">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--green-subtle);">WhatsApp / Direct Line</div>
+                            <div style="font-size: 0.8rem; color: var(--end-bg-light);">WhatsApp / Direct Line</div>
                             <a href="https://wa.me/251910204390">+251 910 204 390</a>
                         </div>
                     </div>
@@ -1143,7 +1134,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Light-Medium Color -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Hailu Tilahun Kebede. All Rights Reserved.</p>
