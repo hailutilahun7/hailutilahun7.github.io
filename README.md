@@ -1218,13 +1218,12 @@
 
                 <div class="social-title">Connect on Social Media</div>
                 <div class="social-bar">
-                    <a href="https://www.linkedin.com/in/hailu-tilahun-kebede" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/251910204390" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://t.me/HailuTilahun" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="https://www.facebook.com/hailu.tilahun" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/HailuTilahun" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/hailu_tilahun" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@HailuTilahun" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/hailu-kebede-292a07373" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/251910204390" target="_blank" title="WhatsApp (hailu_tilahun.2026)"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://t.me/hailsh21" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://accountscenter.facebook.com/profiles/100091523209816/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/Hailu_2025" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/hailsha21?stkn=dm9jMHYxa3poOGRt" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
