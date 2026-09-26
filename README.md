@@ -497,31 +497,41 @@
             color: var(--footer-accent) !important;
         }
 
+        .social-title {
+            font-size: 1.1rem;
+            color: var(--footer-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
         .social-bar {
             display: flex;
             justify-content: center;
             gap: 1.2rem;
-            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .social-bar a {
-            width: 46px;
-            height: 46px;
-            background: rgba(255,255,255,0.12);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.12);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
         }
 
         .social-bar a:hover {
             background: var(--footer-accent);
             color: var(--footer-bg);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(134, 239, 172, 0.4);
         }
 
         /* HIGH-VISIBILITY FOOTER */
@@ -1206,9 +1216,15 @@
                     </div>
                 </div>
 
+                <div class="social-title">Connect on Social Media</div>
                 <div class="social-bar">
-                    <a href="https://wa.me/251910204390" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="mailto:hailshtilahun@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/hailu-tilahun-kebede" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/251910204390" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://t.me/HailuTilahun" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.facebook.com/hailu.tilahun" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/HailuTilahun" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/hailu_tilahun" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@HailuTilahun" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
