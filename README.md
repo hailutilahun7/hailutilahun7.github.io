@@ -10,22 +10,24 @@
     
     <style>
         :root {
-            /* Bold Light-Green Eco Palette */
-            --bg-main: #EDF7F1;           /* Bolder Light Mint Surface */
+            /* Color System */
+            --bg-main: #EDF7F1;           /* Light Mint Surface */
             --bg-card: #FFFFFF;           /* Pure White Card */
-            --green-bold: #16A34A;       /* Bolder Vibrant Green */
+            --green-bold: #16A34A;       /* Vibrant Green */
+            --green-header: #2D6A4F;      /* Rich Medium Green Header */
             --green-dark: #065F46;        /* Deep Bold Forest Green */
-            --green-subtle: #D1FAE5;      /* Rich Soft Green Tint */
+            --green-subtle: #D1FAE5;      /* Soft Green Tint */
             --green-border: #86EFAC;      /* Crisp Light-Green Border */
             --accent-gold: #D97706;       /* Warm Earth Gold Accent */
             --accent-gold-light: #FEF3C7; /* Warm Gold Tint */
             
-            /* Light-Medium End Colors */
-            --end-bg-medium: #3B7A57;     /* Light-Medium Sage Green */
-            --end-bg-light: #E8F5EE;      /* Soft Light Sage Tint */
+            /* Footer & Contact Section High-Visibility Colors */
+            --footer-bg: #0B2B1A;         /* Ultra Deep High-Contrast Green */
+            --footer-text: #FFFFFF;       /* Crisp White Header/Body Text */
+            --footer-accent: #86EFAC;     /* Bright Mint Highlight */
             
-            --text-dark: #0F172A;         /* High-Contrast Dark Text */
-            --text-muted: #334155;        /* Bolder Body Text */
+            --text-dark: #0F172A;         /* Dark Body Text */
+            --text-muted: #334155;        /* Bolder Muted Text */
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -67,62 +69,44 @@
             transition: all 0.3s ease;
         }
 
-        /* Header Navigation - Logo removed */
+        /* COLORED HEADER NAVIGATION (Get in Touch button removed) */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            border-bottom: 2px solid var(--green-border);
+            background-color: var(--green-header);
+            border-bottom: 3px solid var(--green-bold);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(6, 95, 70, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .nav-container {
             max-width: 1280px;
             margin: 0 auto;
             display: flex;
-            justify-content: flex-end; /* Aligns menu items seamlessly */
+            justify-content: center; /* Center-aligned navigation links */
             align-items: center;
             padding: 1.1rem 2rem;
-            gap: 1.5rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 700;
-            color: var(--text-dark);
-            padding: 0.4rem 0.6rem;
+            color: #FFFFFF;
+            padding: 0.4rem 0.8rem;
             border-radius: 6px;
         }
 
         .nav-links a:hover {
-            color: var(--green-bold);
-            background: var(--green-subtle);
-        }
-
-        .btn-green {
-            background-color: var(--green-bold);
-            color: #FFFFFF !important;
-            padding: 0.65rem 1.4rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
-        }
-
-        .btn-green:hover {
-            background-color: var(--green-dark);
-            transform: translateY(-2px);
+            color: var(--green-header);
+            background: #FFFFFF;
         }
 
         .btn-gold {
@@ -404,94 +388,120 @@
             background-color: var(--green-subtle);
         }
 
-        /* Light-Medium End Color Contact Box */
+        /* HIGH-VISIBILITY CONTACT BOX */
         .contact-card {
-            background: linear-gradient(135deg, var(--end-bg-medium), #2D5E43);
+            background: var(--footer-bg);
             border-radius: 20px;
             padding: 3.5rem 2rem;
-            color: #FFFFFF;
+            color: var(--footer-text);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(59, 122, 87, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--green-bold);
         }
 
-        .contact-card h2 { color: #FFFFFF; margin-bottom: 1rem; }
-        .contact-card p { color: var(--end-bg-light); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.08rem; }
+        .contact-card h2 { 
+            color: #FFFFFF; 
+            margin-bottom: 1rem; 
+            font-size: 2.3rem; 
+        }
+
+        .contact-card p { 
+            color: #E2E8F0; 
+            max-width: 650px; 
+            margin: 0 auto 2.5rem auto; 
+            font-size: 1.1rem; 
+            font-weight: 500; 
+        }
 
         .contact-grid {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .contact-method {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 1.1rem;
+            gap: 1rem;
+            font-size: 1.15rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.8rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-method i {
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.25);
+            background: var(--green-bold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
+            font-size: 1.2rem;
         }
 
-        .contact-method a { color: #FFFFFF; font-weight: 700; }
+        .contact-method a { 
+            color: #FFFFFF !important; 
+            font-weight: 700; 
+        }
+
+        .contact-method a:hover {
+            color: var(--footer-accent) !important;
+        }
 
         .social-bar {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.2rem;
             margin-top: 1.5rem;
         }
 
         .social-bar a {
-            width: 42px;
-            height: 42px;
-            background: rgba(255,255,255,0.2);
+            width: 46px;
+            height: 46px;
+            background: rgba(255,255,255,0.12);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
         .social-bar a:hover {
-            background: #FFFFFF;
-            color: var(--end-bg-medium);
+            background: var(--footer-accent);
+            color: var(--footer-bg);
+            transform: translateY(-3px);
         }
 
-        /* Light-Medium End Color Footer */
+        /* HIGH-VISIBILITY FOOTER */
         footer {
-            background: var(--end-bg-medium);
-            color: var(--end-bg-light);
-            padding: 2rem;
+            background: #051A0F;
+            color: #E2E8F0;
+            padding: 2.5rem 2rem;
             text-align: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            font-weight: 600;
+            border-top: 3px solid var(--green-bold);
         }
 
         @media (max-width: 992px) {
-            .nav-links { display: none; }
-            .nav-container { justify-content: center; }
             .hero h1 { font-size: 2.2rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
+            .nav-links { gap: 0.6rem; }
+            .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation (Header Logo Removed) -->
+    <!-- Colored Header Navigation (Get in Touch Button Removed) -->
     <header>
         <div class="nav-container">
             <ul class="nav-links">
@@ -504,7 +514,6 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#consulting">Consulting</a></li>
             </ul>
-            <a href="#contact" class="btn-green"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
         </div>
     </header>
 
@@ -1098,7 +1107,7 @@
         </div>
     </section>
 
-    <!-- Contact Section with Light-Medium Color -->
+    <!-- High-Visibility Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="contact-card">
@@ -1109,14 +1118,14 @@
                     <div class="contact-method">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--end-bg-light);">Direct Email</div>
+                            <div style="font-size: 0.82rem; color: var(--footer-accent); text-align: left;">Direct Email</div>
                             <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-method">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--end-bg-light);">WhatsApp / Direct Line</div>
+                            <div style="font-size: 0.82rem; color: var(--footer-accent); text-align: left;">WhatsApp / Direct Line</div>
                             <a href="https://wa.me/251910204390">+251 910 204 390</a>
                         </div>
                     </div>
@@ -1134,7 +1143,7 @@
         </div>
     </section>
 
-    <!-- Footer with Light-Medium Color -->
+    <!-- High-Visibility Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Hailu Tilahun Kebede. All Rights Reserved.</p>
