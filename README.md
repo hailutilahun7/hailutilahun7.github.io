@@ -10,7 +10,7 @@
     
     <style>
         :root {
-            /* Full Requested Color Palette */
+            /* Full Color Palette */
             --deep-blue: #0A192F;        /* Deep Blue Background & Nav */
             --purple-main: #6D28D9;      /* Purple Headers & Badges */
             --purple-light: #F3E8FF;     
@@ -33,6 +33,7 @@
             --shadow-hover: 0 20px 35px -10px rgba(109, 40, 217, 0.25);
         }
 
+        /* Full Screen & Global Reset */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -53,32 +54,12 @@
             line-height: 1.65;
         }
 
-        /* Typography & Word Break Protection */
-        h1, h2, h3, h4, h5 {
-            font-family: var(--font-display);
-            color: var(--text-dark);
-            line-height: 1.2;
-            font-weight: 700;
+        h1, h2, h3, h4, h5, p, a {
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
-        p {
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        a {
-            text-decoration: none;
-            transition: all 0.3s ease;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* Full 100% Screen Width Sticky Header */
+        /* 100% Edge-to-Edge Sticky Navigation Header */
         header {
             position: sticky;
             top: 0;
@@ -87,7 +68,7 @@
             border-bottom: 3px solid var(--yellow-main);
             z-index: 1000;
             width: 100%;
-            padding: 1rem 2%;
+            padding: 1rem 3%;
         }
 
         .nav-container {
@@ -105,34 +86,33 @@
             gap: 0.6rem;
             color: #FFFFFF;
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 800;
-            letter-spacing: -0.3px;
         }
 
         .header-brand span.profile-tag {
             background: linear-gradient(135deg, var(--purple-main), var(--green-main));
             color: #FFFFFF;
-            padding: 0.2rem 0.5rem;
+            padding: 0.25rem 0.6rem;
             border-radius: 6px;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.8rem;
             list-style: none;
             flex-wrap: wrap;
             justify-content: flex-end;
         }
 
         .nav-links a {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #E2E8F0;
-            padding: 0.35rem 0.65rem;
+            padding: 0.4rem 0.75rem;
             border-radius: 6px;
             white-space: nowrap;
         }
@@ -146,13 +126,14 @@
         .btn-orange {
             background: linear-gradient(135deg, var(--orange-main) 0%, var(--orange-hover) 100%);
             color: #FFFFFF !important;
-            padding: 0.85rem 1.8rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
             box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
+            transition: all 0.3s ease;
         }
 
         .btn-orange:hover {
@@ -163,13 +144,14 @@
         .btn-outline-yellow {
             border: 2px solid var(--yellow-main);
             color: var(--yellow-main) !important;
-            padding: 0.85rem 1.8rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
             background: transparent;
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
+            transition: all 0.3s ease;
         }
 
         .btn-outline-yellow:hover {
@@ -178,12 +160,17 @@
             transform: translateY(-2px);
         }
 
-        /* Full 100% Screen Width Hero Section */
+        /* Full Screen Hero Section */
         .hero {
             width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
             background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 60%, #0F172A 100%);
             color: #FFFFFF;
-            padding: 6rem 2% 5rem 2%;
+            padding: 6rem 3% 5rem 3%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
@@ -195,20 +182,19 @@
             background: rgba(109, 40, 217, 0.3);
             border: 1px solid var(--yellow-main);
             color: var(--yellow-main);
-            padding: 0.5rem 1.4rem;
+            padding: 0.55rem 1.5rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             display: inline-block;
-            margin-bottom: 1.5rem;
-            max-width: 100%;
+            margin-bottom: 1.8rem;
         }
 
         .hero h1 {
             color: #FFFFFF;
-            font-size: 3.2rem;
+            font-size: 3.4rem;
             margin-bottom: 1.2rem;
             font-weight: 800;
             letter-spacing: -1px;
@@ -220,8 +206,7 @@
 
         .hero p.lead {
             color: #CBD5E1;
-            font-size: 1.2rem;
-            max-width: 100%;
+            font-size: 1.25rem;
             margin: 0 auto 2.5rem auto;
             font-weight: 400;
         }
@@ -233,15 +218,15 @@
             flex-wrap: wrap;
         }
 
-        /* Profile Photo Container */
+        /* Profile Image Container */
         .profile-img-container {
             text-align: center;
             margin-bottom: 2rem;
         }
 
         .profile-img {
-            width: 250px;
-            height: 250px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid var(--yellow-main);
@@ -249,36 +234,28 @@
             max-width: 100%;
         }
 
-        /* Full Screen Sections Without Margin Gaps */
+        /* Full Screen Width Sections */
         section {
             width: 100%;
-            padding: 5rem 2%;
+            padding: 5.5rem 3%;
         }
 
         .container {
             width: 100%;
         }
 
-        .bg-white {
-            background-color: #FFFFFF;
-        }
-
-        .bg-purple-tint {
-            background-color: var(--purple-light);
-        }
-
-        .bg-green-tint {
-            background-color: var(--green-light);
-        }
+        .bg-white { background-color: #FFFFFF; }
+        .bg-purple-tint { background-color: var(--purple-light); }
+        .bg-green-tint { background-color: var(--green-light); }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3.2rem;
+            margin-bottom: 3.5rem;
             width: 100%;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
             color: var(--purple-main);
@@ -294,7 +271,7 @@
             border-radius: 4px;
         }
 
-        /* Full Width Edge-to-Edge Grid System */
+        /* Dynamic Unlocked Grid Layout */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; width: 100%; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; width: 100%; }
@@ -307,8 +284,6 @@
             box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
             width: 100%;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
         }
 
         .card:hover {
@@ -330,7 +305,6 @@
             margin-bottom: 1.2rem;
         }
 
-        /* At A Glance Strip */
         .glance-card {
             background: var(--bg-card);
             border: 2px solid #E2E8F0;
@@ -340,8 +314,6 @@
             box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
             width: 100%;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
         }
 
         .glance-card:hover {
@@ -356,7 +328,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Pills & Tags */
+        /* Tag Pills & Bullets */
         .pill-list {
             display: flex;
             flex-wrap: wrap;
@@ -372,7 +344,6 @@
             font-size: 0.82rem;
             font-weight: 700;
             border: 1px solid #DDD6FE;
-            word-wrap: break-word;
         }
 
         .green-bullets {
@@ -385,7 +356,6 @@
             margin-bottom: 0.7rem;
             color: var(--text-muted);
             font-weight: 500;
-            word-wrap: break-word;
         }
 
         .green-bullets li::before {
@@ -405,7 +375,7 @@
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple-main) 100%);
-            padding: 2.2rem 2%;
+            padding: 2.2rem 3%;
             border-radius: 20px;
             color: #FFFFFF;
             flex-wrap: wrap;
@@ -427,7 +397,7 @@
             font-size: 1.2rem;
         }
 
-        /* Responsive Table */
+        /* Table Responsive */
         .table-responsive {
             overflow-x: auto;
             border-radius: 16px;
@@ -461,11 +431,11 @@
             background-color: var(--purple-light);
         }
 
-        /* Full Screen Contact Section */
+        /* Contact Section */
         .contact-card {
             background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 100%);
             border-radius: 24px;
-            padding: 4rem 2%;
+            padding: 4.5rem 3%;
             color: #FFFFFF;
             text-align: center;
             width: 100%;
@@ -475,12 +445,11 @@
         .contact-card h2 { 
             color: #FFFFFF; 
             margin-bottom: 1rem; 
-            font-size: 2.5rem; 
+            font-size: 2.6rem; 
         }
 
         .contact-card p { 
             color: #CBD5E1; 
-            max-width: 100%; 
             margin: 0 auto 2.5rem auto; 
             font-size: 1.15rem; 
         }
@@ -561,11 +530,11 @@
             transform: translateY(-5px);
         }
 
-        /* Full Width Footer */
+        /* Footer */
         footer {
             background: #020617;
             color: #94A3B8;
-            padding: 2.2rem 2%;
+            padding: 2.2rem 3%;
             text-align: center;
             font-size: 0.95rem;
             font-weight: 600;
@@ -573,9 +542,8 @@
         }
 
         @media (max-width: 992px) {
-            header, section { padding-left: 3%; padding-right: 3%; }
             .nav-container { flex-direction: column; gap: 0.8rem; }
-            .hero h1 { font-size: 2.3rem; }
+            .hero h1 { font-size: 2.4rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
             .nav-links { gap: 0.5rem; justify-content: center; }
             .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
@@ -584,7 +552,7 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="#home" class="header-brand">
@@ -604,7 +572,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Full Screen Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
             <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Agricultural Scientist | Researcher | Climate & Sustainable Development Specialist</span>
@@ -872,7 +840,7 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
+    <!-- Peer-Reviewed Publications -->
     <section id="publications" class="bg-purple-tint">
         <div class="container">
             <div class="section-title">
@@ -1206,7 +1174,7 @@
     </section>
 
     <!-- Geographic Focus -->
-    <section class="bg-white" style="padding: 4rem 2%;">
+    <section class="bg-white" style="padding: 4rem 3%;">
         <div class="container" style="text-align: center;">
             <h3 style="color: var(--purple-main);">Geographic Focus</h3>
             <p style="font-size: 1.25rem; color: var(--green-main); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
