@@ -10,30 +10,26 @@
     
     <style>
         :root {
-            /* TEEEM-Inspired Color Palette */
-            --bg-main: #F8FAFC;           /* Clean Ultra-Light Surface */
+            /* Vibrant & Modern Premium Color Palette */
+            --bg-body: #F8FAFC;           /* Crisp Neutral Surface */
             --bg-card: #FFFFFF;           /* Pure White Card */
-            --green-bold: #10B981;       /* Vibrant Emerald */
-            --green-header: #0F172A;      /* Deep Slate Blue Header */
-            --green-dark: #064E3B;        /* Deep Forest Green */
-            --green-subtle: #ECFDF5;      /* Soft Mint Tint */
-            --green-border: #E2E8F0;      /* Sleek Neutral Border */
-            --accent-gold: #F59E0B;       /* Warm Earth Amber */
-            --accent-gold-light: #FEF3C7; 
+            --green-primary: #10B981;    /* Vibrant Emerald Green */
+            --green-glow: #059669;       /* Deep Vibrant Emerald */
+            --green-dark: #092318;        /* Rich Deep Midnight Forest */
+            --green-subtle: #ECFDF5;      /* Soft Fresh Mint Tint */
+            --green-border: #D1FAE5;      /* Clean Light Border */
             
-            /* Footer & Dark Section Colors */
-            --footer-bg: #0F172A;         /* Slate Black */
-            --footer-text: #FFFFFF;       
-            --footer-accent: #34D399;     /* Bright Mint Highlight */
+            --accent-gold: #F59E0B;       /* Warm Radiant Gold */
+            --accent-gold-hover: #D97706;
             
-            --text-dark: #0F172A;         
-            --text-muted: #475569;        
+            --text-dark: #0F172A;         /* High Contrast Dark */
+            --text-muted: #475569;        /* Medium Muted Text */
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
 
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.01);
+            --shadow-hover: 0 20px 35px -10px rgba(16, 185, 129, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -49,8 +45,9 @@
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
-            background-color: var(--bg-main);
+            background-color: var(--bg-body);
             line-height: 1.65;
+            overflow-x: hidden;
         }
 
         /* Typography */
@@ -72,15 +69,16 @@
             transition: all 0.3s ease;
         }
 
-        /* TEEEM-Style Header Navigation */
+        /* Modern Full-Width Sticky Navigation */
         header {
             position: sticky;
             top: 0;
-            background-color: rgba(15, 23, 42, 0.95);
+            background: rgba(9, 35, 24, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
         }
 
         .nav-container {
@@ -89,13 +87,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 2rem;
+            padding: 1.1rem 2rem;
         }
 
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.75rem;
             color: #FFFFFF;
             font-family: var(--font-display);
             font-size: 1.2rem;
@@ -104,13 +102,14 @@
         }
 
         .header-brand span.profile-tag {
-            background: linear-gradient(135deg, var(--green-bold), var(--green-dark));
+            background: linear-gradient(135deg, var(--green-primary), var(--green-glow));
             color: #FFFFFF;
             padding: 0.25rem 0.65rem;
             border-radius: 6px;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
         }
 
         .nav-links {
@@ -125,99 +124,105 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: #E2E8F0;
-            padding: 0.4rem 0.75rem;
+            padding: 0.45rem 0.8rem;
             border-radius: 8px;
         }
 
         .nav-links a:hover {
             color: #FFFFFF;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
         }
 
-        /* Buttons */
+        /* Modern Action Buttons */
         .btn-gold {
-            background: var(--accent-gold);
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
             color: #FFFFFF !important;
-            padding: 0.85rem 1.8rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.25);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
         }
 
         .btn-gold:hover {
-            background: #D97706;
+            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
             transform: translateY(-2px);
-            box-shadow: 0 14px 25px rgba(245, 158, 11, 0.35);
+            box-shadow: 0 14px 30px rgba(245, 158, 11, 0.4);
         }
 
         .btn-outline-green {
-            border: 2px solid var(--green-bold);
-            color: var(--green-bold) !important;
-            padding: 0.85rem 1.8rem;
+            border: 2px solid var(--green-primary);
+            color: var(--green-primary) !important;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
             background: #FFFFFF;
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .btn-outline-green:hover {
-            background-color: var(--green-bold);
+            background-color: var(--green-primary);
             color: #FFFFFF !important;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
 
-        /* TEEEM Program Hero Style */
+        /* Modern Full-Width Hero Section */
         .hero {
-            background: linear-gradient(180deg, #ECFDF5 0%, #F8FAFC 100%);
-            padding: 6.5rem 2rem 5rem 2rem;
+            width: 100%;
+            background: linear-gradient(135deg, #092318 0%, #0F3A28 50%, #061A12 100%);
+            color: #FFFFFF;
+            padding: 7rem 2rem 6rem 2rem;
             text-align: center;
-            border-bottom: 1px solid var(--green-border);
+            position: relative;
+            box-shadow: inset 0 -10px 30px rgba(0,0,0,0.2);
         }
 
         .hero-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .hero-badge {
-            background: #FFFFFF;
-            border: 1px solid #A7F3D0;
-            color: #047857;
-            padding: 0.5rem 1.4rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #34D399;
+            padding: 0.55rem 1.5rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             display: inline-block;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.8rem;
+            backdrop-filter: blur(8px);
         }
 
         .hero h1 {
-            color: #0F172A;
-            font-size: 3.4rem;
-            margin-bottom: 1.2rem;
+            color: #FFFFFF;
+            font-size: 3.5rem;
+            margin-bottom: 1.4rem;
             font-weight: 800;
             letter-spacing: -1px;
+            line-height: 1.18;
         }
 
         .hero h1 span {
-            color: var(--green-bold);
+            background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p.lead {
-            color: var(--text-muted);
+            color: #CBD5E1;
             font-size: 1.25rem;
-            max-width: 850px;
-            margin: 0 auto 2.5rem auto;
+            max-width: 880px;
+            margin: 0 auto 2.8rem auto;
             font-weight: 400;
         }
 
@@ -228,28 +233,29 @@
             flex-wrap: wrap;
         }
 
-        /* Profile Image Container */
+        /* Profile Photo Frame */
         .profile-img-container {
             text-align: center;
             margin-bottom: 2rem;
         }
 
         .profile-img {
-            width: 260px;
-            height: 260px;
+            width: 270px;
+            height: 270px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid #FFFFFF;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 4px var(--green-primary);
         }
 
-        /* Layout Structure */
+        /* Full-Width Section Containers */
         section {
-            padding: 5.5rem 2rem;
+            width: 100%;
+            padding: 6rem 2rem;
         }
 
         .container {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
@@ -257,101 +263,108 @@
             background-color: #FFFFFF;
         }
 
+        .bg-slate {
+            background-color: #F1F5F9;
+        }
+
         .section-title {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3.5rem auto;
+            max-width: 820px;
+            margin: 0 auto 3.8rem auto;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
+            color: var(--green-dark);
         }
 
         .section-title h2::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 4px;
-            background: var(--green-bold);
-            margin: 0.8rem auto 0 auto;
-            border-radius: 2px;
+            background: linear-gradient(90deg, var(--green-primary), var(--accent-gold));
+            margin: 0.9rem auto 0 auto;
+            border-radius: 4px;
         }
 
-        /* Cards & Program Grids */
+        /* Grids & Cards */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
 
         .card {
             background: var(--bg-card);
             border-radius: 20px;
             padding: 2.5rem;
             border: 1px solid var(--green-border);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-card);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            border-color: #A7F3D0;
+            box-shadow: var(--shadow-hover);
+            border-color: var(--green-primary);
         }
 
         .card-icon {
-            width: 56px;
-            height: 56px;
+            width: 58px;
+            height: 58px;
             background: var(--green-subtle);
-            color: var(--green-bold);
-            border-radius: 14px;
+            color: var(--green-primary);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
+            border: 1px solid var(--green-border);
         }
 
-        /* Program Summary Strip */
+        /* At A Glance Strip */
         .glance-card {
             background: var(--bg-card);
             border: 1px solid var(--green-border);
-            border-radius: 18px;
-            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            padding: 2.2rem 1.6rem;
             text-align: center;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
         }
 
         .glance-card:hover {
-            border-color: var(--green-bold);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--green-primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .glance-card i {
-            font-size: 2.4rem;
-            color: var(--green-bold);
-            margin-bottom: 1rem;
+            font-size: 2.6rem;
+            color: var(--green-primary);
+            margin-bottom: 1.1rem;
         }
 
         /* Pills & Tags */
         .pill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.55rem;
-            margin-top: 1.2rem;
+            gap: 0.6rem;
+            margin-top: 1.3rem;
         }
 
         .pill {
             background: var(--green-subtle);
-            color: #047857;
-            padding: 0.45rem 0.95rem;
+            color: var(--green-dark);
+            padding: 0.45rem 1rem;
             border-radius: 50px;
-            font-size: 0.82rem;
+            font-size: 0.83rem;
             font-weight: 700;
+            border: 1px solid var(--green-border);
         }
 
         .green-bullets {
@@ -361,7 +374,7 @@
         .green-bullets li {
             position: relative;
             padding-left: 1.8rem;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.75rem;
             color: var(--text-muted);
             font-weight: 500;
         }
@@ -373,23 +386,23 @@
             position: absolute;
             left: 0;
             top: 2px;
-            color: var(--green-bold);
-            font-size: 0.85rem;
+            color: var(--green-primary);
+            font-size: 0.9rem;
         }
 
-        /* Process Flow Bar */
+        /* Process Flow Banner */
         .process-flow {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--footer-bg);
-            padding: 2.2rem;
-            border-radius: 20px;
+            background: linear-gradient(135deg, #092318 0%, #0F3A28 100%);
+            padding: 2.5rem;
+            border-radius: 22px;
             color: #FFFFFF;
             flex-wrap: wrap;
             gap: 1.2rem;
-            margin-top: 3rem;
-            box-shadow: var(--shadow-lg);
+            margin-top: 3.5rem;
+            box-shadow: 0 15px 30px rgba(9, 35, 24, 0.2);
         }
 
         .process-step {
@@ -401,16 +414,16 @@
         }
 
         .process-step i {
-            color: var(--green-bold);
-            font-size: 1.2rem;
+            color: #34D399;
+            font-size: 1.25rem;
         }
 
-        /* Table Responsive */
+        /* Responsive Table */
         .table-responsive {
             overflow-x: auto;
-            border-radius: 16px;
+            border-radius: 18px;
             border: 1px solid var(--green-border);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-card);
         }
 
         table {
@@ -421,31 +434,31 @@
         }
 
         th {
-            background-color: #0F172A;
+            background-color: var(--green-dark);
             color: #FFFFFF;
-            padding: 1.2rem;
+            padding: 1.3rem;
             font-weight: 700;
         }
 
         td {
-            padding: 1.1rem 1.2rem;
+            padding: 1.1rem 1.3rem;
             border-bottom: 1px solid var(--green-border);
             color: var(--text-muted);
             font-weight: 500;
         }
 
         tr:nth-child(even) {
-            background-color: #F8FAFC;
+            background-color: var(--green-subtle);
         }
 
-        /* TEEEM Contact Section */
+        /* Full-Width Contact Card */
         .contact-card {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            background: linear-gradient(135deg, #092318 0%, #061A12 100%);
             border-radius: 28px;
-            padding: 4.5rem 2rem;
-            color: var(--footer-text);
+            padding: 4.8rem 2rem;
+            color: #FFFFFF;
             text-align: center;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -456,9 +469,9 @@
         }
 
         .contact-card p { 
-            color: #94A3B8; 
-            max-width: 680px; 
-            margin: 0 auto 2.5rem auto; 
+            color: #CBD5E1; 
+            max-width: 700px; 
+            margin: 0 auto 2.8rem auto; 
             font-size: 1.15rem; 
         }
 
@@ -467,7 +480,7 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 3.2rem;
         }
 
         .contact-method {
@@ -475,22 +488,24 @@
             align-items: center;
             gap: 1rem;
             font-size: 1.15rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.1rem 2rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 1.1rem 2.2rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
         }
 
         .contact-method i {
             width: 48px;
             height: 48px;
-            background: var(--green-bold);
+            background: var(--green-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         .contact-method a { 
@@ -499,16 +514,16 @@
         }
 
         .contact-method a:hover {
-            color: var(--footer-accent) !important;
+            color: #34D399 !important;
         }
 
         .social-title {
             font-size: 1.1rem;
-            color: var(--footer-accent);
+            color: #34D399;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             font-weight: 700;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-bar {
@@ -519,39 +534,41 @@
         }
 
         .social-bar a {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             background: rgba(255, 255, 255, 0.08);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.3s ease;
         }
 
         .social-bar a:hover {
-            background: var(--green-bold);
+            background: var(--green-primary);
             color: #FFFFFF;
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
         }
 
         /* Footer */
         footer {
-            background: #020617;
+            background: #04120C;
             color: #94A3B8;
             padding: 2.5rem 2rem;
             text-align: center;
             font-size: 1rem;
             font-weight: 600;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
         }
 
         @media (max-width: 992px) {
             .nav-container { flex-direction: column; gap: 1rem; }
-            .hero h1 { font-size: 2.3rem; }
+            .hero h1 { font-size: 2.4rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
             .nav-links { gap: 0.6rem; justify-content: center; }
             .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
@@ -560,7 +577,7 @@
 </head>
 <body>
 
-    <!-- TEEEM Header Navigation -->
+    <!-- Full-Width Sticky Header -->
     <header>
         <div class="nav-container">
             <a href="#home" class="header-brand">
@@ -580,7 +597,7 @@
         </div>
     </header>
 
-    <!-- Program Hero Section -->
+    <!-- Full-Width Hero Banner -->
     <section class="hero" id="home">
         <div class="hero-container">
             <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Agricultural Scientist | Researcher | Climate & Sustainable Development Specialist</span>
@@ -593,7 +610,7 @@
         </div>
     </section>
 
-    <!-- About Section with Image -->
+    <!-- About Section -->
     <section id="about" class="bg-white">
         <div class="container">
             <div class="grid-2" style="align-items: center;">
@@ -611,13 +628,13 @@
                     <p>I seek long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
                 </div>
                 <div>
-                    <div class="card" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.8rem;">
+                    <div class="card" style="border-left: 5px solid var(--green-primary); margin-bottom: 1.8rem;">
                         <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                         <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term economic and social value.</p>
                     </div>
                     <div class="card" style="border-left: 5px solid var(--accent-gold);">
-                        <div class="card-icon" style="color: var(--accent-gold); background: var(--accent-gold-light);"><i class="fa-solid fa-eye"></i></div>
+                        <div class="card-icon" style="color: var(--accent-gold); background: #FEF3C7;"><i class="fa-solid fa-eye"></i></div>
                         <h3>Vision</h3>
                         <p>A future where science, sustainable finance, responsible investment, nature, agriculture, and international partnerships work together to create resilient communities and inclusive prosperity.</p>
                     </div>
@@ -627,7 +644,7 @@
     </section>
 
     <!-- At A Glance Section -->
-    <section id="glance">
+    <section id="glance" class="bg-slate">
         <div class="container">
             <div class="section-title">
                 <h2>At a Glance</h2>
@@ -675,7 +692,7 @@
                 <h2>Why Partner With Me?</h2>
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
-            <p style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
+            <p style="text-align: center; max-width: 850px; margin: 0 auto 3.2rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
             
             <div class="grid-3">
                 <div class="card">
@@ -713,7 +730,7 @@
     </section>
 
     <!-- Expertise Section -->
-    <section id="expertise">
+    <section id="expertise" class="bg-slate">
         <div class="container">
             <div class="section-title">
                 <h2>Areas of Expertise</h2>
@@ -722,7 +739,7 @@
             
             <div class="grid-3">
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">01</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">01</h4>
                     <h3>Livestock Science & Practical Farming</h3>
                     <div class="pill-list">
                         <span class="pill">Livestock Farm Management</span>
@@ -738,7 +755,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">02</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">02</h4>
                     <h3>Climate, Carbon & Sustainable Finance</h3>
                     <div class="pill-list">
                         <span class="pill">Carbon Credit Development</span>
@@ -751,7 +768,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">03</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">03</h4>
                     <h3>Biodiversity, Nature & Restoration</h3>
                     <div class="pill-list">
                         <span class="pill">Biodiversity Conservation</span>
@@ -765,7 +782,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">04</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">04</h4>
                     <h3>Agriculture & Food Systems</h3>
                     <div class="pill-list">
                         <span class="pill">Sustainable Agriculture</span>
@@ -778,7 +795,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">05</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">05</h4>
                     <h3>Coffee & International Trade</h3>
                     <div class="pill-list">
                         <span class="pill">Sustainable Coffee Production</span>
@@ -790,7 +807,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">06</h4>
+                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">06</h4>
                     <h3>Community & Inclusive Development</h3>
                     <div class="pill-list">
                         <span class="pill">Youth Empowerment</span>
@@ -849,7 +866,7 @@
     </section>
 
     <!-- Peer-Reviewed Publications -->
-    <section id="publications">
+    <section id="publications" class="bg-slate">
         <div class="container">
             <div class="section-title">
                 <h2>Peer-Reviewed Publications</h2>
@@ -861,21 +878,21 @@
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Assessment on rearing and husbandry practices of indigenous goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: #047857;">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
+                    <p style="font-size: 0.88rem; color: var(--green-glow);">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Phenotypic characterization of indigenous sheep breeds in the Jimma Zone, Oromia, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: #047857;">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
+                    <p style="font-size: 0.88rem; color: var(--green-glow);">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>IJRSAS (2019)</h4>
                     <p><strong>"Phenotypic Characterization of Indigenous Goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: #047857;">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
+                    <p style="font-size: 0.88rem; color: var(--green-glow);">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
                 </div>
             </div>
         </div>
@@ -960,14 +977,14 @@
     </section>
 
     <!-- Partnerships Section -->
-    <section id="partnerships">
+    <section id="partnerships" class="bg-slate">
         <div class="container">
             <div class="section-title">
                 <h2>Partnership Opportunities</h2>
                 <p>Building International Partnerships based on Trust, Transparency, Evidence, Inclusion, Innovation, Accountability, and Long-Term Impact.</p>
             </div>
 
-            <div class="grid-4" style="margin-bottom: 3rem;">
+            <div class="grid-4" style="margin-bottom: 3.2rem;">
                 <div class="glance-card">
                     <i class="fa-solid fa-building-columns"></i>
                     <h4>International Foundations</h4>
@@ -1002,8 +1019,8 @@
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem;">Opportunity Focus & Partnership Types</h3>
-            <div class="table-responsive" style="margin-bottom: 3rem;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--green-dark);">Opportunity Focus & Partnership Types</h3>
+            <div class="table-responsive" style="margin-bottom: 3.2rem;">
                 <table>
                     <thead>
                         <tr>
@@ -1047,7 +1064,7 @@
                 </table>
             </div>
 
-            <h3>Partnership Packages & Collaboration Models</h3>
+            <h3 style="color: var(--green-dark);">Partnership Packages & Collaboration Models</h3>
             <div class="grid-3" style="margin-top: 1.5rem;">
                 <div class="card">
                     <h4>1. Research Partnership</h4>
@@ -1077,15 +1094,15 @@
 
             <div class="process-flow">
                 <div class="process-step"><i class="fa-solid fa-lightbulb"></i> Concept</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
                 <div class="process-step"><i class="fa-solid fa-pen-ruler"></i> Project Design</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
                 <div class="process-step"><i class="fa-solid fa-handshake"></i> Partnership</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
                 <div class="process-step"><i class="fa-solid fa-coins"></i> Financing</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
                 <div class="process-step"><i class="fa-solid fa-gears"></i> Implementation</div>
-                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
+                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
                 <div class="process-step"><i class="fa-solid fa-chart-line"></i> Monitoring & Impact</div>
             </div>
         </div>
@@ -1121,7 +1138,7 @@
     </section>
 
     <!-- Consulting Services -->
-    <section id="consulting">
+    <section id="consulting" class="bg-slate">
         <div class="container">
             <div class="section-title">
                 <h2>Consultations for Organizations</h2>
@@ -1162,7 +1179,7 @@
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: #A7F3D0;">
+            <div class="card" style="margin-top: 2.8rem; background: var(--green-subtle); border-color: var(--green-border);">
                 <h3>Transparency & Accountability Commitment</h3>
                 <p>I am committed to professional standards of transparency, accountability, ethical conduct, responsible resource management, evidence-based decision-making, and measurable results. For funded projects and partnerships, appropriate documentation may include:</p>
                 <div class="pill-list">
@@ -1182,16 +1199,16 @@
     </section>
 
     <!-- Geographic Focus -->
-    <section class="bg-white" style="padding: 3rem 2rem;">
+    <section class="bg-white" style="padding: 4rem 2rem;">
         <div class="container" style="text-align: center;">
-            <h3>Geographic Focus</h3>
-            <p style="font-size: 1.15rem; color: #047857; font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
-            <p style="max-width: 780px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
+            <h3 style="color: var(--green-dark);">Geographic Focus</h3>
+            <p style="font-size: 1.2rem; color: var(--green-primary); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
+            <p style="max-width: 800px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="bg-slate">
         <div class="container">
             <div class="contact-card">
                 <h2>Let's Build Sustainable Solutions Together</h2>
@@ -1201,14 +1218,14 @@
                     <div class="contact-method">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <div style="font-size: 0.82rem; color: var(--footer-accent); text-align: left;">Direct Email</div>
+                            <div style="font-size: 0.82rem; color: #34D399; text-align: left;">Direct Email</div>
                             <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-method">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
-                            <div style="font-size: 0.82rem; color: var(--footer-accent); text-align: left;">WhatsApp / Mobile</div>
+                            <div style="font-size: 0.82rem; color: #34D399; text-align: left;">WhatsApp / Mobile</div>
                             <a href="https://wa.me/251910204390">+251 910 204 390</a>
                         </div>
                     </div>
