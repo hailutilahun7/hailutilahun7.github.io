@@ -39,7 +39,10 @@
             padding: 0;
         }
 
-        html {
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
@@ -48,39 +51,43 @@
             color: var(--text-dark);
             background-color: var(--bg-body);
             line-height: 1.65;
-            width: 100vw;
-            overflow-x: hidden;
         }
 
-        /* Typography */
+        /* Typography & Word Break Protection */
         h1, h2, h3, h4, h5 {
             font-family: var(--font-display);
             color: var(--text-dark);
             line-height: 1.2;
             font-weight: 700;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         p {
             color: var(--text-muted);
             margin-bottom: 1.2rem;
             font-size: 1.05rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         a {
             text-decoration: none;
             transition: all 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
-        /* Full Screen Width Header */
+        /* Full 100% Screen Width Sticky Header */
         header {
             position: sticky;
             top: 0;
-            background: rgba(10, 25, 47, 0.96);
+            background: rgba(10, 25, 47, 0.98);
             backdrop-filter: blur(12px);
             border-bottom: 3px solid var(--yellow-main);
             z-index: 1000;
             width: 100%;
-            padding: 1.1rem 3rem;
+            padding: 1rem 2%;
         }
 
         .nav-container {
@@ -88,15 +95,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.6rem;
             color: #FFFFFF;
             font-family: var(--font-display);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 800;
             letter-spacing: -0.3px;
         }
@@ -104,39 +113,40 @@
         .header-brand span.profile-tag {
             background: linear-gradient(135deg, var(--purple-main), var(--green-main));
             color: #FFFFFF;
-            padding: 0.25rem 0.65rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 6px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 0.6rem;
             list-style: none;
             flex-wrap: wrap;
             justify-content: flex-end;
         }
 
         .nav-links a {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             font-weight: 600;
             color: #E2E8F0;
-            padding: 0.45rem 0.85rem;
-            border-radius: 8px;
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
             color: var(--yellow-main);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         /* Buttons */
         .btn-orange {
             background: linear-gradient(135deg, var(--orange-main) 0%, var(--orange-hover) 100%);
             color: #FFFFFF !important;
-            padding: 0.9rem 2rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
             box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
@@ -153,7 +163,7 @@
         .btn-outline-yellow {
             border: 2px solid var(--yellow-main);
             color: var(--yellow-main) !important;
-            padding: 0.9rem 2rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
             background: transparent;
@@ -168,14 +178,13 @@
             transform: translateY(-2px);
         }
 
-        /* Full Screen Hero Section */
+        /* Full 100% Screen Width Hero Section */
         .hero {
-            width: 100vw;
+            width: 100%;
             background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 60%, #0F172A 100%);
             color: #FFFFFF;
-            padding: 7rem 4rem 6rem 4rem;
+            padding: 6rem 2% 5rem 2%;
             text-align: center;
-            position: relative;
         }
 
         .hero-container {
@@ -186,20 +195,21 @@
             background: rgba(109, 40, 217, 0.3);
             border: 1px solid var(--yellow-main);
             color: var(--yellow-main);
-            padding: 0.55rem 1.6rem;
+            padding: 0.5rem 1.4rem;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             display: inline-block;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
         }
 
         .hero h1 {
             color: #FFFFFF;
-            font-size: 3.6rem;
-            margin-bottom: 1.4rem;
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
             font-weight: 800;
             letter-spacing: -1px;
         }
@@ -210,9 +220,9 @@
 
         .hero p.lead {
             color: #CBD5E1;
-            font-size: 1.3rem;
-            max-width: 1000px;
-            margin: 0 auto 2.8rem auto;
+            font-size: 1.2rem;
+            max-width: 100%;
+            margin: 0 auto 2.5rem auto;
             font-weight: 400;
         }
 
@@ -230,18 +240,19 @@
         }
 
         .profile-img {
-            width: 270px;
-            height: 270px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid var(--yellow-main);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
         }
 
-        /* Full Screen Sections */
+        /* Full Screen Sections Without Margin Gaps */
         section {
-            width: 100vw;
-            padding: 6rem 4rem;
+            width: 100%;
+            padding: 5rem 2%;
         }
 
         .container {
@@ -262,11 +273,12 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3.8rem;
+            margin-bottom: 3.2rem;
+            width: 100%;
         }
 
         .section-title h2 {
-            font-size: 2.7rem;
+            font-size: 2.5rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
             color: var(--purple-main);
@@ -278,53 +290,58 @@
             width: 80px;
             height: 5px;
             background: linear-gradient(90deg, var(--orange-main), var(--yellow-main));
-            margin: 0.9rem auto 0 auto;
+            margin: 0.8rem auto 0 auto;
             border-radius: 4px;
         }
 
-        /* Grids & Cards spanning full width */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem; width: 100%; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.2rem; width: 100%; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; width: 100%; }
+        /* Full Width Edge-to-Edge Grid System */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; width: 100%; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; width: 100%; }
 
         .card {
             background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 18px;
+            padding: 2.2rem;
             border: 2px solid #E2E8F0;
             box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
             width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--purple-main);
         }
 
         .card-icon {
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             background: var(--yellow-light);
             color: var(--orange-main);
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         /* At A Glance Strip */
         .glance-card {
             background: var(--bg-card);
             border: 2px solid #E2E8F0;
-            border-radius: 20px;
-            padding: 2.2rem 1.6rem;
+            border-radius: 18px;
+            padding: 2rem 1.4rem;
             text-align: center;
             box-shadow: var(--shadow-card);
             transition: all 0.3s ease;
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .glance-card:hover {
@@ -334,27 +351,28 @@
         }
 
         .glance-card i {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             color: var(--green-main);
-            margin-bottom: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         /* Pills & Tags */
         .pill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.3rem;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
         }
 
         .pill {
             background: var(--purple-light);
             color: var(--purple-main);
-            padding: 0.45rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
             border: 1px solid #DDD6FE;
+            word-wrap: break-word;
         }
 
         .green-bullets {
@@ -364,9 +382,10 @@
         .green-bullets li {
             position: relative;
             padding-left: 1.8rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.7rem;
             color: var(--text-muted);
             font-weight: 500;
+            word-wrap: break-word;
         }
 
         .green-bullets li::before {
@@ -377,7 +396,7 @@
             left: 0;
             top: 2px;
             color: var(--green-main);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         /* Process Flow Banner */
@@ -386,32 +405,32 @@
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple-main) 100%);
-            padding: 2.5rem 3rem;
-            border-radius: 22px;
+            padding: 2.2rem 2%;
+            border-radius: 20px;
             color: #FFFFFF;
             flex-wrap: wrap;
-            gap: 1.2rem;
-            margin-top: 3.5rem;
+            gap: 1rem;
+            margin-top: 3rem;
             width: 100%;
         }
 
         .process-step {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             font-weight: 700;
             color: #E2E8F0;
         }
 
         .process-step i {
             color: var(--yellow-main);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
-        /* Table */
+        /* Responsive Table */
         .table-responsive {
             overflow-x: auto;
-            border-radius: 18px;
+            border-radius: 16px;
             border: 2px solid #E2E8F0;
             box-shadow: var(--shadow-card);
             width: 100%;
@@ -427,12 +446,12 @@
         th {
             background-color: var(--deep-blue);
             color: var(--yellow-main);
-            padding: 1.3rem;
+            padding: 1.2rem;
             font-weight: 700;
         }
 
         td {
-            padding: 1.1rem 1.3rem;
+            padding: 1rem 1.2rem;
             border-bottom: 1px solid #E2E8F0;
             color: var(--text-muted);
             font-weight: 500;
@@ -445,8 +464,8 @@
         /* Full Screen Contact Section */
         .contact-card {
             background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 100%);
-            border-radius: 28px;
-            padding: 5rem 3rem;
+            border-radius: 24px;
+            padding: 4rem 2%;
             color: #FFFFFF;
             text-align: center;
             width: 100%;
@@ -456,45 +475,48 @@
         .contact-card h2 { 
             color: #FFFFFF; 
             margin-bottom: 1rem; 
-            font-size: 2.8rem; 
+            font-size: 2.5rem; 
         }
 
         .contact-card p { 
             color: #CBD5E1; 
-            max-width: 800px; 
-            margin: 0 auto 2.8rem auto; 
-            font-size: 1.2rem; 
+            max-width: 100%; 
+            margin: 0 auto 2.5rem auto; 
+            font-size: 1.15rem; 
         }
 
         .contact-grid {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-bottom: 3.2rem;
+            margin-bottom: 3rem;
+            width: 100%;
         }
 
         .contact-method {
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             background: rgba(255, 255, 255, 0.08);
-            padding: 1.1rem 2.2rem;
+            padding: 1rem 1.8rem;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            word-break: break-all;
         }
 
         .contact-method i {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: var(--orange-main);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .contact-method a { 
@@ -514,20 +536,21 @@
         .social-bar {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
+            width: 100%;
         }
 
         .social-bar a {
-            width: 54px;
-            height: 54px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
@@ -538,24 +561,24 @@
             transform: translateY(-5px);
         }
 
-        /* Footer */
+        /* Full Width Footer */
         footer {
             background: #020617;
             color: #94A3B8;
-            padding: 2.5rem 3rem;
+            padding: 2.2rem 2%;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            width: 100vw;
+            width: 100%;
         }
 
         @media (max-width: 992px) {
-            header, section { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .nav-container { flex-direction: column; gap: 1rem; }
-            .hero h1 { font-size: 2.5rem; }
+            header, section { padding-left: 3%; padding-right: 3%; }
+            .nav-container { flex-direction: column; gap: 0.8rem; }
+            .hero h1 { font-size: 2.3rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
-            .nav-links { gap: 0.6rem; justify-content: center; }
-            .nav-links a { font-size: 0.85rem; padding: 0.3rem 0.5rem; }
+            .nav-links { gap: 0.5rem; justify-content: center; }
+            .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
         }
     </style>
 </head>
@@ -676,7 +699,7 @@
                 <h2>Why Partner With Me?</h2>
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
-            <p style="text-align: center; max-width: 900px; margin: 0 auto 3.2rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
+            <p style="text-align: center; margin: 0 auto 3rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
             
             <div class="grid-3">
                 <div class="card">
@@ -968,7 +991,7 @@
                 <p>Building International Partnerships based on Trust, Transparency, Evidence, Inclusion, Innovation, Accountability, and Long-Term Impact.</p>
             </div>
 
-            <div class="grid-4" style="margin-bottom: 3.2rem;">
+            <div class="grid-4" style="margin-bottom: 3rem;">
                 <div class="glance-card">
                     <i class="fa-solid fa-building-columns"></i>
                     <h4>International Foundations</h4>
@@ -1004,7 +1027,7 @@
             </div>
 
             <h3 style="margin-bottom: 1.5rem; color: var(--purple-main);">Opportunity Focus & Partnership Types</h3>
-            <div class="table-responsive" style="margin-bottom: 3.2rem;">
+            <div class="table-responsive" style="margin-bottom: 3rem;">
                 <table>
                     <thead>
                         <tr>
@@ -1183,11 +1206,11 @@
     </section>
 
     <!-- Geographic Focus -->
-    <section class="bg-white" style="padding: 4rem 3rem;">
+    <section class="bg-white" style="padding: 4rem 2%;">
         <div class="container" style="text-align: center;">
             <h3 style="color: var(--purple-main);">Geographic Focus</h3>
             <p style="font-size: 1.25rem; color: var(--green-main); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
-            <p style="max-width: 900px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
+            <p style="margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
         </div>
     </section>
 
