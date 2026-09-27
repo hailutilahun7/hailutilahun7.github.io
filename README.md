@@ -11,26 +11,31 @@
     <style>
         :root {
             /* Color System */
-            --bg-main: #EDF7F1;           /* Light Mint Surface */
-            --bg-card: #FFFFFF;           /* Pure White Card */
-            --green-bold: #16A34A;       /* Vibrant Green */
-            --green-header: #2D6A4F;      /* Rich Medium Green Header */
-            --green-dark: #065F46;        /* Deep Bold Forest Green */
-            --green-subtle: #D1FAE5;      /* Soft Green Tint */
-            --green-border: #86EFAC;      /* Crisp Light-Green Border */
-            --accent-gold: #D97706;       /* Warm Earth Gold Accent */
-            --accent-gold-light: #FEF3C7; /* Warm Gold Tint */
+            --bg-main: #E2ECE9;           
+            --bg-card: rgba(255, 255, 255, 0.85);           
+            --green-bold: #16A34A;       
+            --green-header: #1E4D37;      
+            --green-dark: #065F46;        
+            --green-subtle: #D1FAE5;      
+            --green-border: rgba(134, 239, 172, 0.6);      
+            --accent-gold: #D97706;       
+            --accent-gold-light: #FEF3C7; 
             
-            /* Footer & Contact Section High-Visibility Colors */
-            --footer-bg: #0B2B1A;         /* Ultra Deep High-Contrast Green */
-            --footer-text: #FFFFFF;       /* Crisp White Header/Body Text */
-            --footer-accent: #86EFAC;     /* Bright Mint Highlight */
+            /* Footer & Contact Section */
+            --footer-bg: #071E12;         
+            --footer-text: #FFFFFF;       
+            --footer-accent: #86EFAC;     
             
-            --text-dark: #0F172A;         /* Dark Body Text */
-            --text-muted: #334155;        /* Bolder Muted Text */
+            --text-dark: #0F172A;         
+            --text-muted: #334155;        
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            /* 3D Shadows */
+            --shadow-3d-sm: 0 10px 20px -5px rgba(6, 95, 70, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-3d-lg: 0 20px 35px -10px rgba(6, 95, 70, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+            --inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
         }
 
         * {
@@ -48,6 +53,50 @@
             color: var(--text-dark);
             background-color: var(--bg-main);
             line-height: 1.65;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        /* Ambient 3D Animated Background Spheres */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.45;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: #86EFAC;
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: #34D399;
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(80px, 60px) scale(1.15); }
         }
 
         /* Typography */
@@ -69,14 +118,15 @@
             transition: all 0.3s ease;
         }
 
-        /* COLORED HEADER NAVIGATION WITH PROFILE LOGO */
+        /* 3D COLORED HEADER NAVIGATION */
         header {
             position: sticky;
             top: 0;
-            background-color: var(--green-header);
-            border-bottom: 3px solid var(--green-bold);
+            background-color: rgba(30, 77, 55, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), var(--inset-highlight);
         }
 
         .nav-container {
@@ -98,22 +148,24 @@
             font-weight: 800;
             letter-spacing: -0.3px;
             white-space: nowrap;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .header-brand span.profile-tag {
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
             color: #86EFAC;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.82rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.1rem;
+            gap: 1rem;
             list-style: none;
             flex-wrap: wrap;
             justify-content: flex-end;
@@ -123,57 +175,68 @@
             font-size: 0.9rem;
             font-weight: 700;
             color: #FFFFFF;
-            padding: 0.4rem 0.7rem;
-            border-radius: 6px;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
         .nav-links a:hover {
             color: var(--green-header);
             background: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
         }
 
+        /* 3D Buttons */
         .btn-gold {
-            background-color: var(--accent-gold);
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
             color: #FFFFFF !important;
-            padding: 0.75rem 1.6rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.35), var(--inset-highlight);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            transform-style: preserve-3d;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .btn-gold:hover {
-            background-color: #B45309;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.03) translateZ(10px);
+            box-shadow: 0 14px 28px rgba(217, 119, 6, 0.45), var(--inset-highlight);
         }
 
         .btn-outline-green {
             border: 2px solid var(--green-bold);
             color: var(--green-bold) !important;
-            padding: 0.75rem 1.6rem;
+            padding: 0.85rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
             background: #FFFFFF;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06), var(--inset-highlight);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .btn-outline-green:hover {
             background-color: var(--green-bold);
             color: #FFFFFF !important;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 24px rgba(22, 163, 74, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--green-subtle) 0%, #DCFCE7 50%, #BBF7D0 100%);
+            background: linear-gradient(135deg, rgba(209, 250, 229, 0.8) 0%, rgba(220, 252, 231, 0.6) 100%);
+            backdrop-filter: blur(10px);
             color: var(--green-dark);
-            padding: 6rem 2rem 5rem 2rem;
+            padding: 6.5rem 2rem 5.5rem 2rem;
             position: relative;
             text-align: center;
-            border-bottom: 2px solid var(--green-border);
+            border-bottom: 1px solid var(--green-border);
         }
 
         .hero-container {
@@ -187,7 +250,7 @@
             background: #FFFFFF;
             border: 1.5px solid var(--green-bold);
             color: var(--green-bold);
-            padding: 0.45rem 1.3rem;
+            padding: 0.5rem 1.4rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 800;
@@ -195,25 +258,30 @@
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.12), var(--inset-highlight);
+            transform: translateZ(10px);
         }
 
         .hero h1 {
             color: var(--green-dark);
-            font-size: 3.1rem;
+            font-size: 3.2rem;
             margin-bottom: 1.2rem;
             font-weight: 800;
+            text-shadow: 0 2px 10px rgba(6, 95, 70, 0.1);
         }
 
         .hero h1 span {
             color: var(--green-bold);
+            background: linear-gradient(135deg, #16A34A, #065F46);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p.lead {
             color: var(--text-muted);
-            font-size: 1.18rem;
+            font-size: 1.2rem;
             max-width: 900px;
-            margin: 0 auto 2.2rem auto;
+            margin: 0 auto 2.5rem auto;
             font-weight: 500;
         }
 
@@ -224,10 +292,11 @@
             flex-wrap: wrap;
         }
 
-        /* Profile Image Styles */
+        /* 3D Profile Photo Container */
         .profile-img-container {
             text-align: center;
             margin-bottom: 2rem;
+            perspective: 1000px;
         }
 
         .profile-img {
@@ -235,13 +304,19 @@
             height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--green-bold);
-            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+            border: 6px solid #FFFFFF;
+            box-shadow: 0 20px 40px rgba(6, 95, 70, 0.25), 0 0 0 4px var(--green-bold);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .profile-img-container:hover .profile-img {
+            transform: rotateY(10deg) rotateX(5deg) scale(1.05) translateZ(20px);
         }
 
         /* Layout Structure */
         section {
-            padding: 5rem 2rem;
+            padding: 5.5rem 2rem;
+            position: relative;
         }
 
         .container {
@@ -250,7 +325,8 @@
         }
 
         .bg-white {
-            background-color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
         }
 
         .section-title {
@@ -260,7 +336,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             margin-bottom: 0.8rem;
             position: relative;
             font-weight: 800;
@@ -269,85 +345,95 @@
         .section-title h2::after {
             content: '';
             display: block;
-            width: 70px;
-            height: 4px;
-            background: var(--green-bold);
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--green-bold), var(--green-dark));
             margin: 0.8rem auto 0 auto;
-            border-radius: 2px;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(22, 163, 74, 0.4);
         }
 
-        /* Grids & Cards */
+        /* 3D Interactive Card Styles */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
 
         .card {
             background: var(--bg-card);
-            border-radius: 14px;
-            padding: 2.2rem;
-            border: 1.5px solid var(--green-border);
-            box-shadow: 0 4px 15px rgba(6, 95, 70, 0.04);
-            transition: all 0.3s ease;
-            position: relative;
+            backdrop-filter: blur(16px);
+            border-radius: 18px;
+            padding: 2.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-3d-sm), var(--inset-highlight);
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(22, 163, 74, 0.15);
+            box-shadow: var(--shadow-3d-lg), var(--inset-highlight);
             border-color: var(--green-bold);
         }
 
         .card-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--green-subtle);
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #FFFFFF, var(--green-subtle));
             color: var(--green-bold);
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            margin-bottom: 1.4rem;
             border: 1px solid var(--green-border);
+            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.15);
+            transform: translateZ(20px);
         }
 
-        /* At A Glance Strip */
+        /* At A Glance 3D Cards */
         .glance-card {
             background: var(--bg-card);
-            border: 1.5px solid var(--green-border);
-            border-radius: 12px;
-            padding: 1.6rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 1.8rem;
             text-align: center;
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-3d-sm), var(--inset-highlight);
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
         }
 
         .glance-card:hover {
             border-color: var(--green-bold);
-            background: #FAFFFC;
+            box-shadow: var(--shadow-3d-lg), var(--inset-highlight);
         }
 
         .glance-card i {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: var(--green-bold);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.9rem;
+            transform: translateZ(25px);
         }
 
         /* Pills & Badges */
         .pill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.55rem;
+            margin-top: 1.2rem;
         }
 
         .pill {
-            background: var(--green-subtle);
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--green-subtle) 100%);
             color: var(--green-dark);
-            padding: 0.4rem 0.9rem;
+            padding: 0.45rem 0.95rem;
             border-radius: 50px;
             font-size: 0.83rem;
             font-weight: 700;
             border: 1px solid var(--green-border);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transform: translateZ(10px);
         }
 
         .green-bullets {
@@ -357,7 +443,7 @@
         .green-bullets li {
             position: relative;
             padding-left: 1.8rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.7rem;
             color: var(--text-muted);
             font-weight: 500;
         }
@@ -373,44 +459,48 @@
             font-size: 0.85rem;
         }
 
-        /* Process Bar */
+        /* Process Bar with 3D Depth */
         .process-flow {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--green-dark);
-            padding: 1.8rem;
-            border-radius: 14px;
+            background: linear-gradient(135deg, #065F46 0%, #071E12 100%);
+            padding: 2.2rem;
+            border-radius: 18px;
             color: #FFFFFF;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2.5rem;
+            gap: 1.2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-3d-lg);
+            border: 1px solid rgba(255,255,255,0.15);
         }
 
         .process-step {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             font-weight: 700;
             color: var(--green-subtle);
         }
 
         .process-step i {
             color: #86EFAC;
+            font-size: 1.2rem;
         }
 
         /* Styled Table */
         .table-responsive {
             overflow-x: auto;
-            border-radius: 12px;
-            border: 1.5px solid var(--green-border);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-radius: 16px;
+            border: 1px solid var(--green-border);
+            box-shadow: var(--shadow-3d-sm);
+            backdrop-filter: blur(12px);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: var(--bg-card);
+            background: rgba(255, 255, 255, 0.9);
             text-align: left;
         }
 
@@ -429,29 +519,31 @@
         }
 
         tr:nth-child(even) {
-            background-color: var(--green-subtle);
+            background-color: rgba(209, 250, 229, 0.4);
         }
 
-        /* HIGH-VISIBILITY CONTACT BOX */
+        /* 3D Contact Section */
         .contact-card {
-            background: var(--footer-bg);
-            border-radius: 20px;
-            padding: 3.5rem 2rem;
+            background: linear-gradient(135deg, #0B2B1A 0%, #051A0F 100%);
+            border-radius: 24px;
+            padding: 4rem 2rem;
             color: var(--footer-text);
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-3d-lg);
             border: 2px solid var(--green-bold);
+            position: relative;
+            overflow: hidden;
         }
 
         .contact-card h2 { 
             color: #FFFFFF; 
             margin-bottom: 1rem; 
-            font-size: 2.3rem; 
+            font-size: 2.4rem; 
         }
 
         .contact-card p { 
             color: #E2E8F0; 
-            max-width: 650px; 
+            max-width: 680px; 
             margin: 0 auto 2.5rem auto; 
             font-size: 1.1rem; 
             font-weight: 500; 
@@ -462,7 +554,7 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.8rem;
         }
 
         .contact-method {
@@ -471,21 +563,30 @@
             gap: 1rem;
             font-size: 1.15rem;
             background: rgba(255, 255, 255, 0.08);
-            padding: 1rem 1.8rem;
+            backdrop-filter: blur(10px);
+            padding: 1.1rem 2rem;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.14);
         }
 
         .contact-method i {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             background: var(--green-bold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
         }
 
         .contact-method a { 
@@ -503,7 +604,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
         }
 
         .social-bar {
@@ -514,29 +615,31 @@
         }
 
         .social-bar a {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.12);
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            transition: all 0.3s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .social-bar a:hover {
             background: var(--footer-accent);
             color: var(--footer-bg);
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(134, 239, 172, 0.4);
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(134, 239, 172, 0.4);
         }
 
-        /* HIGH-VISIBILITY FOOTER */
+        /* Footer */
         footer {
-            background: #051A0F;
+            background: #03120A;
             color: #E2E8F0;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -555,6 +658,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Ambient 3D Animated Background Spheres -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
     <!-- Header Navigation with Profile Logo -->
     <header>
@@ -608,12 +717,12 @@
                     <p>I seek to build long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
                 </div>
                 <div>
-                    <div class="card" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.5rem;">
+                    <div class="card js-tilt" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.5rem;">
                         <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                         <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term economic and social value.</p>
                     </div>
-                    <div class="card" style="border-left: 5px solid var(--accent-gold);">
+                    <div class="card js-tilt" style="border-left: 5px solid var(--accent-gold);">
                         <div class="card-icon" style="color: var(--accent-gold); background: var(--accent-gold-light);"><i class="fa-solid fa-eye"></i></div>
                         <h3>Vision</h3>
                         <p>A future where science, sustainable finance, responsible investment, nature, agriculture, and international partnerships work together to create resilient communities and inclusive prosperity.</p>
@@ -631,32 +740,32 @@
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
             <div class="grid-3">
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-dna"></i>
                     <h4>Science & Genetics</h4>
                     <p>Animal breeding, livestock genetics, genomics, GWAS, genetic resource conservation, and sustainable livestock systems.</p>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-cloud-sun-rain"></i>
                     <h4>Climate & Carbon</h4>
                     <p>Carbon-credit development, climate finance, climate mitigation and adaptation, climate-smart agriculture, and climate resilience.</p>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-tree"></i>
                     <h4>Nature & Biodiversity</h4>
                     <p>Biodiversity conservation, agroforestry, ecosystem restoration, regenerative agriculture, nature-based solutions, organic farming, aquaculture, and apiculture.</p>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-wheat-awn"></i>
                     <h4>Agriculture & Food Systems</h4>
                     <p>Sustainable agriculture, agroecology, food security, resilient food systems, agricultural value chains, community-based production, humanitarian food resilience, entrepreneurship, self-sufficiency, and sustainable livelihoods.</p>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-mug-hot"></i>
                     <h4>Coffee & Global Markets</h4>
                     <p>Sustainable coffee production, value-chain development, export, international market linkage, and agricultural investment.</p>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-people-hold"></i>
                     <h4>Inclusive Development</h4>
                     <p>Youth empowerment, women's economic participation, community development, capacity building, and sustainable livelihoods.</p>
@@ -675,32 +784,32 @@
             <p style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">Many high-impact development opportunities require more than funding. They require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-microscope"></i></div>
                     <h3>Scientific & Technical Expertise</h3>
                     <p>A foundation in animal science, breeding, genetics, genomics (GWAS), biometry, SAS/R data analytics, and sustainable production systems.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-temperature-arrow-up"></i></div>
                     <h3>Climate & Sustainability Knowledge</h3>
                     <p>Experience across climate mitigation, adaptation, climate-smart agriculture, biodiversity, agroforestry, ecosystem restoration, carbon markets, and climate finance.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-users"></i></div>
                     <h3>Community Perspective</h3>
                     <p>A strong focus on smallholder farmers, communities, youth, women, gender inclusiveness, sustainable livelihoods, and inclusive development.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
                     <h3>Project Development</h3>
                     <p>Proven track record translating ideas into structured projects, partnerships, MER frameworks, investment opportunities, and scalable initiatives.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
                     <h3>International Partnership Orientation</h3>
                     <p>Commitment to building relationships with international foundations, donors, NGOs, investors, research institutions, companies, and development agencies.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Measurable Impact</h3>
                     <p>My approach integrates rigorous scientific research, investment, field implementation, and verified impact reporting.</p>
@@ -718,7 +827,7 @@
             </div>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">01</h4>
                     <h3>Livestock Science & Practical Farming</h3>
                     <div class="pill-list">
@@ -734,7 +843,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">02</h4>
                     <h3>Climate, Carbon & Sustainable Finance</h3>
                     <div class="pill-list">
@@ -747,7 +856,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">03</h4>
                     <h3>Biodiversity, Nature & Restoration</h3>
                     <div class="pill-list">
@@ -761,7 +870,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">04</h4>
                     <h3>Agriculture & Food Systems</h3>
                     <div class="pill-list">
@@ -774,7 +883,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">05</h4>
                     <h3>Coffee & International Trade</h3>
                     <div class="pill-list">
@@ -786,7 +895,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">06</h4>
                     <h3>Community & Inclusive Development</h3>
                     <div class="pill-list">
@@ -809,35 +918,35 @@
                 <p>Turning Knowledge into Action</p>
             </div>
             <div class="grid-2">
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Climate Action & Resilience</h3>
                     <p>Developing approaches that connect climate action, adaptation, resilience, and sustainable finance to support communities and productive systems facing climate-related challenges.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Carbon Markets & Climate Finance</h3>
                     <p>Exploring opportunities to connect verified environmental outcomes with responsible climate finance and carbon-market mechanisms, while ensuring community and ecosystem benefits.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Biodiversity & Nature</h3>
                     <p>Supporting biodiversity conservation, agroforestry, ecosystem restoration, sustainable land management, and nature-based solutions.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Sustainable Agriculture</h3>
                     <p>Advancing agricultural systems that improve productivity, climate resilience, food security, environmental sustainability, and livelihoods.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Livestock & Genetic Resources</h3>
                     <p>Applying science and innovation to strengthen livestock productivity, dairy farming, honeybee production, poultry farming, genetic resources, sustainable production, and resilience.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Coffee & International Markets</h3>
                     <p>Connecting Ethiopia's agricultural potential with international buyers, investors, markets, value-chain development, and sustainable trade opportunities.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Youth & Women's Economic Empowerment</h3>
                     <p>Supporting approaches that create meaningful opportunities for youth and women through skills, enterprise, agriculture, innovation, employment, and sustainable livelihoods.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Community-Led Development</h3>
                     <p>Promoting development approaches that place communities at the center of planning, implementation, ownership, and long-term sustainability.</p>
                 </div>
@@ -854,21 +963,21 @@
             </div>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Assessment on rearing and husbandry practices of indigenous goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
                     <p style="font-size: 0.88rem; color: var(--green-dark);">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Phenotypic characterization of indigenous sheep breeds in the Jimma Zone, Oromia, Ethiopia"</strong></p>
                     <p style="font-size: 0.88rem; color: var(--green-dark);">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>IJRSAS (2019)</h4>
                     <p><strong>"Phenotypic Characterization of Indigenous Goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
@@ -887,7 +996,7 @@
             </div>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>01 — Climate & Carbon</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -898,7 +1007,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>02 — Biodiversity & Ecosystem Restoration</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -909,7 +1018,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>03 — Sustainable Agriculture & Livestock</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -920,7 +1029,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>04 — Coffee & International Trade</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -931,7 +1040,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>05 — Youth & Women's Empowerment</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -942,7 +1051,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>06 — Research & Innovation</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -966,35 +1075,35 @@
 
             <!-- Target Partners Grid -->
             <div class="grid-4" style="margin-bottom: 3rem;">
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-building-columns"></i>
                     <h4>International Foundations</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <h4>Donors & Grant Makers</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-globe"></i>
                     <h4>NGOs & Civil Society</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-landmark"></i>
                     <h4>Development Agencies</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-chart-pie"></i>
                     <h4>Impact Investors</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <h4>Research Institutions</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-briefcase"></i>
                     <h4>Private-Sector Partners</h4>
                 </div>
-                <div class="glance-card">
+                <div class="glance-card js-tilt">
                     <i class="fa-solid fa-seedling"></i>
                     <h4>Agricultural & Environmental Orgs</h4>
                 </div>
@@ -1049,27 +1158,27 @@
             <!-- Partnership Models & Packages -->
             <h3>Partnership Packages & Collaboration Models</h3>
             <div class="grid-3" style="margin-top: 1.5rem;">
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>1. Research Partnership</h4>
                     <p>Joint research, field studies, publications, data collection, and knowledge exchange.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>2. Project Development Partnership</h4>
                     <p>Concept development, proposal writing, budgeting, technical design, and funding preparation.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>3. Implementation Partnership</h4>
                     <p>Local coordination, community engagement, training, field implementation, and reporting.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>4. Investment Partnership</h4>
                     <p>Agriculture, livestock, coffee, climate, carbon, biodiversity, and sustainable enterprise opportunities.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>5. Technical Partnership</h4>
                     <p>Scientific expertise, agricultural technology, climate solutions, monitoring, and capacity building.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h4>6. Market Partnership</h4>
                     <p>Connecting Ethiopian agricultural products and sustainable enterprises with international buyers, investors, and markets.</p>
                 </div>
@@ -1100,12 +1209,12 @@
                 <p>Translating Evidence and Innovation into Field Solutions</p>
             </div>
             <div class="grid-2">
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Core Research Intersection</h3>
                     <p>My research interests focus on the relationship between: <strong>Animal Science | Genetics | Agriculture | Climate Resilience | Biodiversity | Sustainable Land Use | Community Development</strong>.</p>
                     <p>The objective is to translate research, evidence, and innovation into practical solutions that can benefit farmers, communities, institutions, businesses, and development partners.</p>
                 </div>
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Specific Research Interests</h3>
                     <ul class="green-bullets">
                         <li>Animal Breeding & Genetics (MSc Jimma University)</li>
@@ -1130,7 +1239,7 @@
             </div>
             
             <div class="grid-3">
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Documentation & Proposals</h3>
                     <ul class="green-bullets">
                         <li>Project Proposal Development</li>
@@ -1141,7 +1250,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Planning & Strategy</h3>
                     <ul class="green-bullets">
                         <li>Business Plans and Feasibility Studies</li>
@@ -1151,7 +1260,7 @@
                     </ul>
                 </div>
 
-                <div class="card">
+                <div class="card js-tilt">
                     <h3>Design, Data & Reports</h3>
                     <ul class="green-bullets">
                         <li>Data Collection & Statistical Analysis (SAS/R)</li>
@@ -1164,7 +1273,7 @@
             </div>
 
             <!-- Transparency Box -->
-            <div class="card" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: var(--green-border);">
+            <div class="card js-tilt" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: var(--green-border);">
                 <h3>Transparency & Accountability Commitment</h3>
                 <p>I am committed to professional standards of transparency, accountability, ethical conduct, responsible resource management, evidence-based decision-making, and measurable results. For funded projects and partnerships, appropriate documentation may include:</p>
                 <div class="pill-list">
@@ -1229,12 +1338,33 @@
         </div>
     </section>
 
-    <!-- High-Visibility Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Hailu Tilahun Kebede. All Rights Reserved. | Addis Ababa, Ethiopia</p>
         </div>
     </footer>
 
+    <!-- Vanilla 3D Tilt Script -->
+    <script>
+        document.querySelectorAll('.js-tilt').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            });
+        });
+    </script>
 </body>
 </html>
