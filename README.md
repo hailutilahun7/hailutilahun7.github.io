@@ -10,32 +10,30 @@
     
     <style>
         :root {
-            /* Color System */
-            --bg-main: #E2ECE9;           
-            --bg-card: rgba(255, 255, 255, 0.85);           
-            --green-bold: #16A34A;       
-            --green-header: #1E4D37;      
-            --green-dark: #065F46;        
-            --green-subtle: #D1FAE5;      
-            --green-border: rgba(134, 239, 172, 0.6);      
-            --accent-gold: #D97706;       
+            /* TEEEM-Inspired Color Palette */
+            --bg-main: #F8FAFC;           /* Clean Ultra-Light Surface */
+            --bg-card: #FFFFFF;           /* Pure White Card */
+            --green-bold: #10B981;       /* Vibrant Emerald */
+            --green-header: #0F172A;      /* Deep Slate Blue Header */
+            --green-dark: #064E3B;        /* Deep Forest Green */
+            --green-subtle: #ECFDF5;      /* Soft Mint Tint */
+            --green-border: #E2E8F0;      /* Sleek Neutral Border */
+            --accent-gold: #F59E0B;       /* Warm Earth Amber */
             --accent-gold-light: #FEF3C7; 
             
-            /* Footer & Contact Section */
-            --footer-bg: #071E12;         
+            /* Footer & Dark Section Colors */
+            --footer-bg: #0F172A;         /* Slate Black */
             --footer-text: #FFFFFF;       
-            --footer-accent: #86EFAC;     
+            --footer-accent: #34D399;     /* Bright Mint Highlight */
             
             --text-dark: #0F172A;         
-            --text-muted: #334155;        
+            --text-muted: #475569;        
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
 
-            /* 3D Shadows */
-            --shadow-3d-sm: 0 10px 20px -5px rgba(6, 95, 70, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-3d-lg: 0 20px 35px -10px rgba(6, 95, 70, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
-            --inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
 
         * {
@@ -53,64 +51,20 @@
             color: var(--text-dark);
             background-color: var(--bg-main);
             line-height: 1.65;
-            overflow-x: hidden;
-            perspective: 1000px;
-        }
-
-        /* Ambient 3D Animated Background Spheres */
-        .ambient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.45;
-            animation: float 20s infinite alternate ease-in-out;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: #86EFAC;
-            top: -100px;
-            left: -100px;
-        }
-
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: #34D399;
-            bottom: -150px;
-            right: -100px;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(80px, 60px) scale(1.15); }
         }
 
         /* Typography */
         h1, h2, h3, h4, h5 {
             font-family: var(--font-display);
-            color: var(--green-dark);
-            line-height: 1.25;
+            color: var(--text-dark);
+            line-height: 1.2;
             font-weight: 700;
         }
 
         p {
             color: var(--text-muted);
             margin-bottom: 1.2rem;
-            font-size: 1.02rem;
+            font-size: 1.05rem;
         }
 
         a {
@@ -118,15 +72,15 @@
             transition: all 0.3s ease;
         }
 
-        /* 3D COLORED HEADER NAVIGATION */
+        /* TEEEM-Style Header Navigation */
         header {
             position: sticky;
             top: 0;
-            background-color: rgba(30, 77, 55, 0.92);
+            background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), var(--inset-highlight);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -135,7 +89,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.1rem 2rem;
+            padding: 1.2rem 2rem;
         }
 
         .header-brand {
@@ -144,28 +98,24 @@
             gap: 0.6rem;
             color: #FFFFFF;
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 800;
             letter-spacing: -0.3px;
-            white-space: nowrap;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .header-brand span.profile-tag {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-            color: #86EFAC;
+            background: linear-gradient(135deg, var(--green-bold), var(--green-dark));
+            color: #FFFFFF;
             padding: 0.25rem 0.65rem;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.1rem;
             list-style: none;
             flex-wrap: wrap;
             justify-content: flex-end;
@@ -173,38 +123,34 @@
 
         .nav-links a {
             font-size: 0.9rem;
-            font-weight: 700;
-            color: #FFFFFF;
+            font-weight: 600;
+            color: #E2E8F0;
             padding: 0.4rem 0.75rem;
             border-radius: 8px;
-            transition: transform 0.2s ease, background 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--green-header);
-            background: #FFFFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* 3D Buttons */
+        /* Buttons */
         .btn-gold {
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            background: var(--accent-gold);
             color: #FFFFFF !important;
             padding: 0.85rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.35), var(--inset-highlight);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.25);
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            transform-style: preserve-3d;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .btn-gold:hover {
-            transform: translateY(-3px) scale(1.03) translateZ(10px);
-            box-shadow: 0 14px 28px rgba(217, 119, 6, 0.45), var(--inset-highlight);
+            background: #D97706;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 25px rgba(245, 158, 11, 0.35);
         }
 
         .btn-outline-green {
@@ -217,72 +163,62 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06), var(--inset-highlight);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-sm);
         }
 
         .btn-outline-green:hover {
             background-color: var(--green-bold);
             color: #FFFFFF !important;
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 24px rgba(22, 163, 74, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
         }
 
-        /* Hero Section */
+        /* TEEEM Program Hero Style */
         .hero {
-            background: linear-gradient(135deg, rgba(209, 250, 229, 0.8) 0%, rgba(220, 252, 231, 0.6) 100%);
-            backdrop-filter: blur(10px);
-            color: var(--green-dark);
-            padding: 6.5rem 2rem 5.5rem 2rem;
-            position: relative;
+            background: linear-gradient(180deg, #ECFDF5 0%, #F8FAFC 100%);
+            padding: 6.5rem 2rem 5rem 2rem;
             text-align: center;
             border-bottom: 1px solid var(--green-border);
         }
 
         .hero-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .hero-badge {
             background: #FFFFFF;
-            border: 1.5px solid var(--green-bold);
-            color: var(--green-bold);
+            border: 1px solid #A7F3D0;
+            color: #047857;
             padding: 0.5rem 1.4rem;
             border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 800;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 1.5rem;
-            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.12), var(--inset-highlight);
-            transform: translateZ(10px);
+            box-shadow: var(--shadow-sm);
         }
 
         .hero h1 {
-            color: var(--green-dark);
-            font-size: 3.2rem;
+            color: #0F172A;
+            font-size: 3.4rem;
             margin-bottom: 1.2rem;
             font-weight: 800;
-            text-shadow: 0 2px 10px rgba(6, 95, 70, 0.1);
+            letter-spacing: -1px;
         }
 
         .hero h1 span {
             color: var(--green-bold);
-            background: linear-gradient(135deg, #16A34A, #065F46);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero p.lead {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 900px;
+            font-size: 1.25rem;
+            max-width: 850px;
             margin: 0 auto 2.5rem auto;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .hero-btns {
@@ -292,31 +228,24 @@
             flex-wrap: wrap;
         }
 
-        /* 3D Profile Photo Container */
+        /* Profile Image Container */
         .profile-img-container {
             text-align: center;
             margin-bottom: 2rem;
-            perspective: 1000px;
         }
 
         .profile-img {
-            width: 250px;
-            height: 250px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid #FFFFFF;
-            box-shadow: 0 20px 40px rgba(6, 95, 70, 0.25), 0 0 0 4px var(--green-bold);
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .profile-img-container:hover .profile-img {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05) translateZ(20px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Layout Structure */
         section {
             padding: 5.5rem 2rem;
-            position: relative;
         }
 
         .container {
@@ -325,8 +254,7 @@
         }
 
         .bg-white {
-            background-color: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(12px);
+            background-color: #FFFFFF;
         }
 
         .section-title {
@@ -338,85 +266,78 @@
         .section-title h2 {
             font-size: 2.5rem;
             margin-bottom: 0.8rem;
-            position: relative;
             font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .section-title h2::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--green-bold), var(--green-dark));
+            width: 60px;
+            height: 4px;
+            background: var(--green-bold);
             margin: 0.8rem auto 0 auto;
-            border-radius: 4px;
-            box-shadow: 0 2px 6px rgba(22, 163, 74, 0.4);
+            border-radius: 2px;
         }
 
-        /* 3D Interactive Card Styles */
+        /* Cards & Program Grids */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
 
         .card {
             background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            border-radius: 18px;
-            padding: 2.3rem;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: var(--shadow-3d-sm), var(--inset-highlight);
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
-            transform-style: preserve-3d;
-            will-change: transform;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--green-border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .card:hover {
-            box-shadow: var(--shadow-3d-lg), var(--inset-highlight);
-            border-color: var(--green-bold);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: #A7F3D0;
         }
 
         .card-icon {
-            width: 58px;
-            height: 58px;
-            background: linear-gradient(135deg, #FFFFFF, var(--green-subtle));
+            width: 56px;
+            height: 56px;
+            background: var(--green-subtle);
             color: var(--green-bold);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 1.4rem;
-            border: 1px solid var(--green-border);
-            box-shadow: 0 6px 15px rgba(22, 163, 74, 0.15);
-            transform: translateZ(20px);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* At A Glance 3D Cards */
+        /* Program Summary Strip */
         .glance-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 1.8rem;
+            border: 1px solid var(--green-border);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
             text-align: center;
-            box-shadow: var(--shadow-3d-sm), var(--inset-highlight);
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-            transform-style: preserve-3d;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
 
         .glance-card:hover {
             border-color: var(--green-bold);
-            box-shadow: var(--shadow-3d-lg), var(--inset-highlight);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
         .glance-card i {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: var(--green-bold);
-            margin-bottom: 0.9rem;
-            transform: translateZ(25px);
+            margin-bottom: 1rem;
         }
 
-        /* Pills & Badges */
+        /* Pills & Tags */
         .pill-list {
             display: flex;
             flex-wrap: wrap;
@@ -425,15 +346,12 @@
         }
 
         .pill {
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--green-subtle) 100%);
-            color: var(--green-dark);
+            background: var(--green-subtle);
+            color: #047857;
             padding: 0.45rem 0.95rem;
             border-radius: 50px;
-            font-size: 0.83rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            border: 1px solid var(--green-border);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            transform: translateZ(10px);
         }
 
         .green-bullets {
@@ -459,20 +377,19 @@
             font-size: 0.85rem;
         }
 
-        /* Process Bar with 3D Depth */
+        /* Process Flow Bar */
         .process-flow {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #065F46 0%, #071E12 100%);
+            background: var(--footer-bg);
             padding: 2.2rem;
-            border-radius: 18px;
+            border-radius: 20px;
             color: #FFFFFF;
             flex-wrap: wrap;
             gap: 1.2rem;
             margin-top: 3rem;
-            box-shadow: var(--shadow-3d-lg);
-            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: var(--shadow-lg);
         }
 
         .process-step {
@@ -480,32 +397,31 @@
             align-items: center;
             gap: 0.6rem;
             font-weight: 700;
-            color: var(--green-subtle);
+            color: #E2E8F0;
         }
 
         .process-step i {
-            color: #86EFAC;
+            color: var(--green-bold);
             font-size: 1.2rem;
         }
 
-        /* Styled Table */
+        /* Table Responsive */
         .table-responsive {
             overflow-x: auto;
             border-radius: 16px;
             border: 1px solid var(--green-border);
-            box-shadow: var(--shadow-3d-sm);
-            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-sm);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.9);
+            background: #FFFFFF;
             text-align: left;
         }
 
         th {
-            background-color: var(--green-bold);
+            background-color: #0F172A;
             color: #FFFFFF;
             padding: 1.2rem;
             font-weight: 700;
@@ -513,40 +429,37 @@
 
         td {
             padding: 1.1rem 1.2rem;
-            border-bottom: 1px solid var(--green-subtle);
+            border-bottom: 1px solid var(--green-border);
             color: var(--text-muted);
             font-weight: 500;
         }
 
         tr:nth-child(even) {
-            background-color: rgba(209, 250, 229, 0.4);
+            background-color: #F8FAFC;
         }
 
-        /* 3D Contact Section */
+        /* TEEEM Contact Section */
         .contact-card {
-            background: linear-gradient(135deg, #0B2B1A 0%, #051A0F 100%);
-            border-radius: 24px;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            border-radius: 28px;
+            padding: 4.5rem 2rem;
             color: var(--footer-text);
             text-align: center;
-            box-shadow: var(--shadow-3d-lg);
-            border: 2px solid var(--green-bold);
-            position: relative;
-            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-card h2 { 
             color: #FFFFFF; 
             margin-bottom: 1rem; 
-            font-size: 2.4rem; 
+            font-size: 2.6rem; 
         }
 
         .contact-card p { 
-            color: #E2E8F0; 
+            color: #94A3B8; 
             max-width: 680px; 
             margin: 0 auto 2.5rem auto; 
-            font-size: 1.1rem; 
-            font-weight: 500; 
+            font-size: 1.15rem; 
         }
 
         .contact-grid {
@@ -554,7 +467,7 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 2.8rem;
+            margin-bottom: 3rem;
         }
 
         .contact-method {
@@ -562,18 +475,10 @@
             align-items: center;
             gap: 1rem;
             font-size: 1.15rem;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
             padding: 1.1rem 2rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .contact-method:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-method i {
@@ -585,8 +490,7 @@
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 1.25rem;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+            font-size: 1.2rem;
         }
 
         .contact-method a { 
@@ -615,42 +519,39 @@
         }
 
         .social-bar a {
-            width: 52px;
-            height: 52px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.08);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
         }
 
         .social-bar a:hover {
-            background: var(--footer-accent);
-            color: var(--footer-bg);
-            transform: translateY(-6px) scale(1.1);
-            box-shadow: 0 10px 20px rgba(134, 239, 172, 0.4);
+            background: var(--green-bold);
+            color: #FFFFFF;
+            transform: translateY(-4px);
         }
 
         /* Footer */
         footer {
-            background: #03120A;
-            color: #E2E8F0;
+            background: #020617;
+            color: #94A3B8;
             padding: 2.5rem 2rem;
             text-align: center;
             font-size: 1rem;
             font-weight: 600;
-            border-top: 3px solid var(--green-bold);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 992px) {
             .nav-container { flex-direction: column; gap: 1rem; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.3rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
             .nav-links { gap: 0.6rem; justify-content: center; }
             .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
@@ -659,13 +560,7 @@
 </head>
 <body>
 
-    <!-- Ambient 3D Animated Background Spheres -->
-    <div class="ambient-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-    </div>
-
-    <!-- Header Navigation with Profile Logo -->
+    <!-- TEEEM Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="#home" class="header-brand">
@@ -685,12 +580,12 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Program Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
             <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Agricultural Scientist | Researcher | Climate & Sustainable Development Specialist</span>
             <h1>Connecting <span>Science, Nature, Finance & Markets</span> for Sustainable Development</h1>
-            <p class="lead">I work at the intersection of Agricultural Science, Sustainable Agriculture, Climate Action, Biodiversity Conservation, Carbon Finance, Sustainable Development, and International Markets.</p>
+            <p class="lead">Working across Agricultural Science, Sustainable Agriculture, Climate Action, Biodiversity Conservation, Carbon Finance, Sustainable Development, and International Markets.</p>
             <div class="hero-btns">
                 <a href="HAILU_RESUME_2026.pdf" download class="btn-gold"><i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)</a>
                 <a href="#projects" class="btn-outline-green"><i class="fa-solid fa-folder-open"></i> Explore Projects</a>
@@ -703,7 +598,6 @@
         <div class="container">
             <div class="grid-2" style="align-items: center;">
                 <div>
-                    <!-- Integrated Profile Image -->
                     <div class="profile-img-container">
                         <img src="photo_2025-11-24_14-14-04.jpg" alt="Hailu Tilahun Kebede" class="profile-img">
                     </div>
@@ -711,18 +605,18 @@
                     <div style="text-align: left;" class="section-title">
                         <h2>From Science to Sustainable Impact</h2>
                     </div>
-                    <p><strong>Hailu Tilahun Kebede</strong> is an Agricultural Scientist and Researcher with an MSc in Animal Breeding and Genetics and over eight years of experience in research, academic instruction, and community-based development. His professional work has expanded from agricultural science and research into an integrated development approach connecting: <strong>Science | Agriculture | Climate | Nature | Finance | Markets | Communities</strong>.</p>
-                    <p>This multidisciplinary perspective supports the development of solutions addressing interconnected challenges including climate change, food security, biodiversity loss, agricultural productivity, sustainable livelihoods, rural development, and access to international markets.</p>
-                    <p>The focus is not only on developing ideas, but on connecting knowledge, resources, partnerships, and implementation to create practical and scalable impact. I have also participated in youth leadership and climate action on COP programs and UNFCCC processes, serving as an Official Delegate at the UNECA Regional Forum on Sustainable Development and African Union Delegate to the G20 Social Summit.</p>
-                    <p>I seek to build long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
+                    <p><strong>Hailu Tilahun Kebede</strong> is an Agricultural Scientist and Researcher with an MSc in Animal Breeding and Genetics and over eight years of experience in research, academic instruction, and community-based development. His professional work connects: <strong>Science | Agriculture | Climate | Nature | Finance | Markets | Communities</strong>.</p>
+                    <p>This multidisciplinary perspective supports solutions addressing interconnected challenges including climate change, food security, biodiversity loss, agricultural productivity, sustainable livelihoods, rural development, and access to international markets.</p>
+                    <p>The focus is not only on developing ideas, but on connecting knowledge, resources, partnerships, and implementation to create practical and scalable impact. I have participated in youth leadership and climate action on COP programs and UNFCCC processes, serving as an Official Delegate at the UNECA Regional Forum on Sustainable Development and African Union Delegate to the G20 Social Summit.</p>
+                    <p>I seek long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
                 </div>
                 <div>
-                    <div class="card js-tilt" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.5rem;">
+                    <div class="card" style="border-left: 5px solid var(--green-bold); margin-bottom: 1.8rem;">
                         <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                         <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term economic and social value.</p>
                     </div>
-                    <div class="card js-tilt" style="border-left: 5px solid var(--accent-gold);">
+                    <div class="card" style="border-left: 5px solid var(--accent-gold);">
                         <div class="card-icon" style="color: var(--accent-gold); background: var(--accent-gold-light);"><i class="fa-solid fa-eye"></i></div>
                         <h3>Vision</h3>
                         <p>A future where science, sustainable finance, responsible investment, nature, agriculture, and international partnerships work together to create resilient communities and inclusive prosperity.</p>
@@ -740,32 +634,32 @@
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
             <div class="grid-3">
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-dna"></i>
                     <h4>Science & Genetics</h4>
                     <p>Animal breeding, livestock genetics, genomics, GWAS, genetic resource conservation, and sustainable livestock systems.</p>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-cloud-sun-rain"></i>
                     <h4>Climate & Carbon</h4>
                     <p>Carbon-credit development, climate finance, climate mitigation and adaptation, climate-smart agriculture, and climate resilience.</p>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-tree"></i>
                     <h4>Nature & Biodiversity</h4>
                     <p>Biodiversity conservation, agroforestry, ecosystem restoration, regenerative agriculture, nature-based solutions, organic farming, aquaculture, and apiculture.</p>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-wheat-awn"></i>
                     <h4>Agriculture & Food Systems</h4>
                     <p>Sustainable agriculture, agroecology, food security, resilient food systems, agricultural value chains, community-based production, humanitarian food resilience, entrepreneurship, self-sufficiency, and sustainable livelihoods.</p>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-mug-hot"></i>
                     <h4>Coffee & Global Markets</h4>
                     <p>Sustainable coffee production, value-chain development, export, international market linkage, and agricultural investment.</p>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-people-hold"></i>
                     <h4>Inclusive Development</h4>
                     <p>Youth empowerment, women's economic participation, community development, capacity building, and sustainable livelihoods.</p>
@@ -781,35 +675,35 @@
                 <h2>Why Partner With Me?</h2>
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
-            <p style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">Many high-impact development opportunities require more than funding. They require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
+            <p style="text-align: center; max-width: 850px; margin: 0 auto 3rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
             
             <div class="grid-3">
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-microscope"></i></div>
                     <h3>Scientific & Technical Expertise</h3>
                     <p>A foundation in animal science, breeding, genetics, genomics (GWAS), biometry, SAS/R data analytics, and sustainable production systems.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-temperature-arrow-up"></i></div>
                     <h3>Climate & Sustainability Knowledge</h3>
                     <p>Experience across climate mitigation, adaptation, climate-smart agriculture, biodiversity, agroforestry, ecosystem restoration, carbon markets, and climate finance.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-users"></i></div>
                     <h3>Community Perspective</h3>
                     <p>A strong focus on smallholder farmers, communities, youth, women, gender inclusiveness, sustainable livelihoods, and inclusive development.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
                     <h3>Project Development</h3>
                     <p>Proven track record translating ideas into structured projects, partnerships, MER frameworks, investment opportunities, and scalable initiatives.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
                     <h3>International Partnership Orientation</h3>
                     <p>Commitment to building relationships with international foundations, donors, NGOs, investors, research institutions, companies, and development agencies.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <h3>Measurable Impact</h3>
                     <p>My approach integrates rigorous scientific research, investment, field implementation, and verified impact reporting.</p>
@@ -827,7 +721,7 @@
             </div>
             
             <div class="grid-3">
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">01</h4>
                     <h3>Livestock Science & Practical Farming</h3>
                     <div class="pill-list">
@@ -843,7 +737,7 @@
                     </div>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">02</h4>
                     <h3>Climate, Carbon & Sustainable Finance</h3>
                     <div class="pill-list">
@@ -856,7 +750,7 @@
                     </div>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">03</h4>
                     <h3>Biodiversity, Nature & Restoration</h3>
                     <div class="pill-list">
@@ -870,7 +764,7 @@
                     </div>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">04</h4>
                     <h3>Agriculture & Food Systems</h3>
                     <div class="pill-list">
@@ -883,7 +777,7 @@
                     </div>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">05</h4>
                     <h3>Coffee & International Trade</h3>
                     <div class="pill-list">
@@ -895,7 +789,7 @@
                     </div>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h4 style="color: var(--accent-gold); font-size: 0.9rem; font-family: var(--font-display); font-weight: 700;">06</h4>
                     <h3>Community & Inclusive Development</h3>
                     <div class="pill-list">
@@ -918,43 +812,43 @@
                 <p>Turning Knowledge into Action</p>
             </div>
             <div class="grid-2">
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Climate Action & Resilience</h3>
-                    <p>Developing approaches that connect climate action, adaptation, resilience, and sustainable finance to support communities and productive systems facing climate-related challenges.</p>
+                    <p>Developing approaches connecting climate action, adaptation, resilience, and sustainable finance to support communities facing climate-related challenges.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Carbon Markets & Climate Finance</h3>
-                    <p>Exploring opportunities to connect verified environmental outcomes with responsible climate finance and carbon-market mechanisms, while ensuring community and ecosystem benefits.</p>
+                    <p>Connecting verified environmental outcomes with climate finance and carbon-market mechanisms while ensuring community benefits.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Biodiversity & Nature</h3>
-                    <p>Supporting biodiversity conservation, agroforestry, ecosystem restoration, sustainable land management, and nature-based solutions.</p>
+                    <p>Supporting biodiversity conservation, agroforestry, ecosystem restoration, and nature-based solutions.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Sustainable Agriculture</h3>
-                    <p>Advancing agricultural systems that improve productivity, climate resilience, food security, environmental sustainability, and livelihoods.</p>
+                    <p>Advancing agricultural systems that improve productivity, climate resilience, food security, and environmental sustainability.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Livestock & Genetic Resources</h3>
-                    <p>Applying science and innovation to strengthen livestock productivity, dairy farming, honeybee production, poultry farming, genetic resources, sustainable production, and resilience.</p>
+                    <p>Applying science to strengthen livestock productivity, dairy farming, apiculture, genetic resources, and resilience.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Coffee & International Markets</h3>
-                    <p>Connecting Ethiopia's agricultural potential with international buyers, investors, markets, value-chain development, and sustainable trade opportunities.</p>
+                    <p>Connecting Ethiopia's agricultural potential with buyers, investors, markets, value-chain development, and trade opportunities.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Youth & Women's Economic Empowerment</h3>
-                    <p>Supporting approaches that create meaningful opportunities for youth and women through skills, enterprise, agriculture, innovation, employment, and sustainable livelihoods.</p>
+                    <p>Creating meaningful opportunities for youth and women through skills, enterprise, agriculture, innovation, and sustainable livelihoods.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Community-Led Development</h3>
-                    <p>Promoting development approaches that place communities at the center of planning, implementation, ownership, and long-term sustainability.</p>
+                    <p>Promoting development approaches placing communities at the center of planning, implementation, ownership, and sustainability.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Peer-Reviewed Scientific Publications Section -->
+    <!-- Peer-Reviewed Publications -->
     <section id="publications">
         <div class="container">
             <div class="section-title">
@@ -963,25 +857,25 @@
             </div>
             
             <div class="grid-3">
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Assessment on rearing and husbandry practices of indigenous goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-dark);">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
+                    <p style="font-size: 0.88rem; color: #047857;">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Phenotypic characterization of indigenous sheep breeds in the Jimma Zone, Oromia, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-dark);">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
+                    <p style="font-size: 0.88rem; color: #047857;">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>IJRSAS (2019)</h4>
                     <p><strong>"Phenotypic Characterization of Indigenous Goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-dark);">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
+                    <p style="font-size: 0.88rem; color: #047857;">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
                 </div>
             </div>
         </div>
@@ -992,11 +886,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>Strategic Projects & Field Implementation</h2>
-                <p>From Research Concepts to Investable, Fundable, and Field-Tested Initiatives</p>
+                <p>From Research Concepts to Field-Tested Initiatives</p>
             </div>
             
             <div class="grid-3">
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>01 — Climate & Carbon</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1007,7 +901,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>02 — Biodiversity & Ecosystem Restoration</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1018,7 +912,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>03 — Sustainable Agriculture & Livestock</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1029,7 +923,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>04 — Coffee & International Trade</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1040,7 +934,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>05 — Youth & Women's Empowerment</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1051,7 +945,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>06 — Research & Innovation</h3>
                     <p><strong>Projects focused on:</strong></p>
                     <ul class="green-bullets">
@@ -1073,43 +967,41 @@
                 <p>Building International Partnerships based on Trust, Transparency, Evidence, Inclusion, Innovation, Accountability, and Long-Term Impact.</p>
             </div>
 
-            <!-- Target Partners Grid -->
             <div class="grid-4" style="margin-bottom: 3rem;">
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-building-columns"></i>
                     <h4>International Foundations</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <h4>Donors & Grant Makers</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-globe"></i>
                     <h4>NGOs & Civil Society</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-landmark"></i>
                     <h4>Development Agencies</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-chart-pie"></i>
                     <h4>Impact Investors</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <h4>Research Institutions</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-briefcase"></i>
                     <h4>Private-Sector Partners</h4>
                 </div>
-                <div class="glance-card js-tilt">
+                <div class="glance-card">
                     <i class="fa-solid fa-seedling"></i>
                     <h4>Agricultural & Environmental Orgs</h4>
                 </div>
             </div>
 
-            <!-- Table -->
             <h3 style="margin-bottom: 1.5rem;">Opportunity Focus & Partnership Types</h3>
             <div class="table-responsive" style="margin-bottom: 3rem;">
                 <table>
@@ -1155,47 +1047,45 @@
                 </table>
             </div>
 
-            <!-- Partnership Models & Packages -->
             <h3>Partnership Packages & Collaboration Models</h3>
             <div class="grid-3" style="margin-top: 1.5rem;">
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>1. Research Partnership</h4>
                     <p>Joint research, field studies, publications, data collection, and knowledge exchange.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>2. Project Development Partnership</h4>
                     <p>Concept development, proposal writing, budgeting, technical design, and funding preparation.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>3. Implementation Partnership</h4>
                     <p>Local coordination, community engagement, training, field implementation, and reporting.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>4. Investment Partnership</h4>
                     <p>Agriculture, livestock, coffee, climate, carbon, biodiversity, and sustainable enterprise opportunities.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>5. Technical Partnership</h4>
                     <p>Scientific expertise, agricultural technology, climate solutions, monitoring, and capacity building.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h4>6. Market Partnership</h4>
                     <p>Connecting Ethiopian agricultural products and sustainable enterprises with international buyers, investors, and markets.</p>
                 </div>
             </div>
 
-            <!-- Process Flow -->
             <div class="process-flow">
                 <div class="process-step"><i class="fa-solid fa-lightbulb"></i> Concept</div>
-                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
                 <div class="process-step"><i class="fa-solid fa-pen-ruler"></i> Project Design</div>
-                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
                 <div class="process-step"><i class="fa-solid fa-handshake"></i> Partnership</div>
-                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
                 <div class="process-step"><i class="fa-solid fa-coins"></i> Financing</div>
-                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
                 <div class="process-step"><i class="fa-solid fa-gears"></i> Implementation</div>
-                <i class="fa-solid fa-chevron-right" style="color: #86EFAC;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--green-bold);"></i>
                 <div class="process-step"><i class="fa-solid fa-chart-line"></i> Monitoring & Impact</div>
             </div>
         </div>
@@ -1209,12 +1099,12 @@
                 <p>Translating Evidence and Innovation into Field Solutions</p>
             </div>
             <div class="grid-2">
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Core Research Intersection</h3>
                     <p>My research interests focus on the relationship between: <strong>Animal Science | Genetics | Agriculture | Climate Resilience | Biodiversity | Sustainable Land Use | Community Development</strong>.</p>
-                    <p>The objective is to translate research, evidence, and innovation into practical solutions that can benefit farmers, communities, institutions, businesses, and development partners.</p>
+                    <p>The objective is to translate research, evidence, and innovation into practical solutions benefiting farmers, communities, institutions, businesses, and development partners.</p>
                 </div>
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Specific Research Interests</h3>
                     <ul class="green-bullets">
                         <li>Animal Breeding & Genetics (MSc Jimma University)</li>
@@ -1239,7 +1129,7 @@
             </div>
             
             <div class="grid-3">
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Documentation & Proposals</h3>
                     <ul class="green-bullets">
                         <li>Project Proposal Development</li>
@@ -1250,7 +1140,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Planning & Strategy</h3>
                     <ul class="green-bullets">
                         <li>Business Plans and Feasibility Studies</li>
@@ -1260,7 +1150,7 @@
                     </ul>
                 </div>
 
-                <div class="card js-tilt">
+                <div class="card">
                     <h3>Design, Data & Reports</h3>
                     <ul class="green-bullets">
                         <li>Data Collection & Statistical Analysis (SAS/R)</li>
@@ -1272,8 +1162,7 @@
                 </div>
             </div>
 
-            <!-- Transparency Box -->
-            <div class="card js-tilt" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: var(--green-border);">
+            <div class="card" style="margin-top: 2.5rem; background: var(--green-subtle); border-color: #A7F3D0;">
                 <h3>Transparency & Accountability Commitment</h3>
                 <p>I am committed to professional standards of transparency, accountability, ethical conduct, responsible resource management, evidence-based decision-making, and measurable results. For funded projects and partnerships, appropriate documentation may include:</p>
                 <div class="pill-list">
@@ -1296,12 +1185,12 @@
     <section class="bg-white" style="padding: 3rem 2rem;">
         <div class="container" style="text-align: center;">
             <h3>Geographic Focus</h3>
-            <p style="font-size: 1.15rem; color: var(--green-dark); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
+            <p style="font-size: 1.15rem; color: #047857; font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
             <p style="max-width: 780px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
         </div>
     </section>
 
-    <!-- High-Visibility Contact Section -->
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="contact-card">
@@ -1345,26 +1234,5 @@
         </div>
     </footer>
 
-    <!-- Vanilla 3D Tilt Script -->
-    <script>
-        document.querySelectorAll('.js-tilt').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -8;
-                const rotateY = ((x - centerX) / centerX) * 8;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-            });
-        });
-    </script>
 </body>
 </html>
