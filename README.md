@@ -10,26 +10,27 @@
     
     <style>
         :root {
-            /* Vibrant & Modern Premium Color Palette */
-            --bg-body: #F8FAFC;           /* Crisp Neutral Surface */
-            --bg-card: #FFFFFF;           /* Pure White Card */
-            --green-primary: #10B981;    /* Vibrant Emerald Green */
-            --green-glow: #059669;       /* Deep Vibrant Emerald */
-            --green-dark: #092318;        /* Rich Deep Midnight Forest */
-            --green-subtle: #ECFDF5;      /* Soft Fresh Mint Tint */
-            --green-border: #D1FAE5;      /* Clean Light Border */
+            /* Full Requested Color Palette */
+            --deep-blue: #0A192F;        /* Deep Blue Background & Nav */
+            --purple-main: #6D28D9;      /* Purple Headers & Badges */
+            --purple-light: #F3E8FF;     
+            --green-main: #10B981;       /* Emerald Green Highlights */
+            --green-light: #ECFDF5;      
+            --orange-main: #F97316;      /* Vibrant Orange Buttons */
+            --orange-hover: #EA580C;     
+            --yellow-main: #FBBF24;      /* Radiant Yellow Accents */
+            --yellow-light: #FEF3C7;     
             
-            --accent-gold: #F59E0B;       /* Warm Radiant Gold */
-            --accent-gold-hover: #D97706;
-            
-            --text-dark: #0F172A;         /* High Contrast Dark */
-            --text-muted: #475569;        /* Medium Muted Text */
+            --bg-body: #F8FAFC;           
+            --bg-card: #FFFFFF;           
+            --text-dark: #0F172A;         
+            --text-muted: #475569;        
             
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
 
-            --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.01);
-            --shadow-hover: 0 20px 35px -10px rgba(16, 185, 129, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+            --shadow-card: 0 10px 25px -5px rgba(10, 25, 47, 0.08);
+            --shadow-hover: 0 20px 35px -10px rgba(109, 40, 217, 0.25);
         }
 
         * {
@@ -47,6 +48,7 @@
             color: var(--text-dark);
             background-color: var(--bg-body);
             line-height: 1.65;
+            width: 100vw;
             overflow-x: hidden;
         }
 
@@ -69,25 +71,23 @@
             transition: all 0.3s ease;
         }
 
-        /* Modern Full-Width Sticky Navigation */
+        /* Full Screen Width Header */
         header {
             position: sticky;
             top: 0;
-            background: rgba(9, 35, 24, 0.95);
+            background: rgba(10, 25, 47, 0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 3px solid var(--yellow-main);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             width: 100%;
+            padding: 1.1rem 3rem;
         }
 
         .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.1rem 2rem;
         }
 
         .header-brand {
@@ -96,132 +96,122 @@
             gap: 0.75rem;
             color: #FFFFFF;
             font-family: var(--font-display);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 800;
             letter-spacing: -0.3px;
         }
 
         .header-brand span.profile-tag {
-            background: linear-gradient(135deg, var(--green-primary), var(--green-glow));
+            background: linear-gradient(135deg, var(--purple-main), var(--green-main));
             color: #FFFFFF;
             padding: 0.25rem 0.65rem;
             border-radius: 6px;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.1rem;
+            gap: 1.2rem;
             list-style: none;
             flex-wrap: wrap;
             justify-content: flex-end;
         }
 
         .nav-links a {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #E2E8F0;
-            padding: 0.45rem 0.8rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 8px;
         }
 
         .nav-links a:hover {
-            color: #FFFFFF;
-            background: rgba(255, 255, 255, 0.12);
+            color: var(--yellow-main);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Modern Action Buttons */
-        .btn-gold {
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        /* Buttons */
+        .btn-orange {
+            background: linear-gradient(135deg, var(--orange-main) 0%, var(--orange-hover) 100%);
             color: #FFFFFF !important;
             padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
         }
 
-        .btn-gold:hover {
-            background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+        .btn-orange:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 14px 30px rgba(249, 115, 22, 0.45);
         }
 
-        .btn-outline-green {
-            border: 2px solid var(--green-primary);
-            color: var(--green-primary) !important;
+        .btn-outline-yellow {
+            border: 2px solid var(--yellow-main);
+            color: var(--yellow-main) !important;
             padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 700;
-            background: #FFFFFF;
+            background: transparent;
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .btn-outline-green:hover {
-            background-color: var(--green-primary);
-            color: #FFFFFF !important;
+        .btn-outline-yellow:hover {
+            background-color: var(--yellow-main);
+            color: var(--deep-blue) !important;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
 
-        /* Modern Full-Width Hero Section */
+        /* Full Screen Hero Section */
         .hero {
-            width: 100%;
-            background: linear-gradient(135deg, #092318 0%, #0F3A28 50%, #061A12 100%);
+            width: 100vw;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 60%, #0F172A 100%);
             color: #FFFFFF;
-            padding: 7rem 2rem 6rem 2rem;
+            padding: 7rem 4rem 6rem 4rem;
             text-align: center;
             position: relative;
-            box-shadow: inset 0 -10px 30px rgba(0,0,0,0.2);
         }
 
         .hero-container {
-            max-width: 1100px;
-            margin: 0 auto;
+            width: 100%;
         }
 
         .hero-badge {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            color: #34D399;
-            padding: 0.55rem 1.5rem;
+            background: rgba(109, 40, 217, 0.3);
+            border: 1px solid var(--yellow-main);
+            color: var(--yellow-main);
+            padding: 0.55rem 1.6rem;
             border-radius: 50px;
-            font-size: 0.88rem;
-            font-weight: 700;
+            font-size: 0.9rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             display: inline-block;
             margin-bottom: 1.8rem;
-            backdrop-filter: blur(8px);
         }
 
         .hero h1 {
             color: #FFFFFF;
-            font-size: 3.5rem;
+            font-size: 3.6rem;
             margin-bottom: 1.4rem;
             font-weight: 800;
             letter-spacing: -1px;
-            line-height: 1.18;
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--green-main);
         }
 
         .hero p.lead {
             color: #CBD5E1;
-            font-size: 1.25rem;
-            max-width: 880px;
+            font-size: 1.3rem;
+            max-width: 1000px;
             margin: 0 auto 2.8rem auto;
             font-weight: 400;
         }
@@ -233,7 +223,7 @@
             flex-wrap: wrap;
         }
 
-        /* Profile Photo Frame */
+        /* Profile Photo Container */
         .profile-img-container {
             text-align: center;
             margin-bottom: 2rem;
@@ -244,92 +234,92 @@
             height: 270px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid #FFFFFF;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 4px var(--green-primary);
+            border: 6px solid var(--yellow-main);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        /* Full-Width Section Containers */
+        /* Full Screen Sections */
         section {
-            width: 100%;
-            padding: 6rem 2rem;
+            width: 100vw;
+            padding: 6rem 4rem;
         }
 
         .container {
-            max-width: 1280px;
-            margin: 0 auto;
+            width: 100%;
         }
 
         .bg-white {
             background-color: #FFFFFF;
         }
 
-        .bg-slate {
-            background-color: #F1F5F9;
+        .bg-purple-tint {
+            background-color: var(--purple-light);
+        }
+
+        .bg-green-tint {
+            background-color: var(--green-light);
         }
 
         .section-title {
             text-align: center;
-            max-width: 820px;
-            margin: 0 auto 3.8rem auto;
+            margin-bottom: 3.8rem;
         }
 
         .section-title h2 {
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--green-dark);
+            color: var(--purple-main);
         }
 
         .section-title h2::after {
             content: '';
             display: block;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--green-primary), var(--accent-gold));
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--orange-main), var(--yellow-main));
             margin: 0.9rem auto 0 auto;
             border-radius: 4px;
         }
 
-        /* Grids & Cards */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
+        /* Grids & Cards spanning full width */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2.5rem; width: 100%; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.2rem; width: 100%; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; width: 100%; }
 
         .card {
             background: var(--bg-card);
             border-radius: 20px;
             padding: 2.5rem;
-            border: 1px solid var(--green-border);
+            border: 2px solid #E2E8F0;
             box-shadow: var(--shadow-card);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
         .card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-hover);
-            border-color: var(--green-primary);
+            border-color: var(--purple-main);
         }
 
         .card-icon {
-            width: 58px;
-            height: 58px;
-            background: var(--green-subtle);
-            color: var(--green-primary);
+            width: 60px;
+            height: 60px;
+            background: var(--yellow-light);
+            color: var(--orange-main);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
             margin-bottom: 1.5rem;
-            border: 1px solid var(--green-border);
         }
 
         /* At A Glance Strip */
         .glance-card {
             background: var(--bg-card);
-            border: 1px solid var(--green-border);
+            border: 2px solid #E2E8F0;
             border-radius: 20px;
             padding: 2.2rem 1.6rem;
             text-align: center;
@@ -338,14 +328,14 @@
         }
 
         .glance-card:hover {
-            border-color: var(--green-primary);
+            border-color: var(--green-main);
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
         .glance-card i {
             font-size: 2.6rem;
-            color: var(--green-primary);
+            color: var(--green-main);
             margin-bottom: 1.1rem;
         }
 
@@ -358,13 +348,13 @@
         }
 
         .pill {
-            background: var(--green-subtle);
-            color: var(--green-dark);
+            background: var(--purple-light);
+            color: var(--purple-main);
             padding: 0.45rem 1rem;
             border-radius: 50px;
-            font-size: 0.83rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid var(--green-border);
+            border: 1px solid #DDD6FE;
         }
 
         .green-bullets {
@@ -386,7 +376,7 @@
             position: absolute;
             left: 0;
             top: 2px;
-            color: var(--green-primary);
+            color: var(--green-main);
             font-size: 0.9rem;
         }
 
@@ -395,14 +385,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #092318 0%, #0F3A28 100%);
-            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple-main) 100%);
+            padding: 2.5rem 3rem;
             border-radius: 22px;
             color: #FFFFFF;
             flex-wrap: wrap;
             gap: 1.2rem;
             margin-top: 3.5rem;
-            box-shadow: 0 15px 30px rgba(9, 35, 24, 0.2);
+            width: 100%;
         }
 
         .process-step {
@@ -414,16 +404,17 @@
         }
 
         .process-step i {
-            color: #34D399;
+            color: var(--yellow-main);
             font-size: 1.25rem;
         }
 
-        /* Responsive Table */
+        /* Table */
         .table-responsive {
             overflow-x: auto;
             border-radius: 18px;
-            border: 1px solid var(--green-border);
+            border: 2px solid #E2E8F0;
             box-shadow: var(--shadow-card);
+            width: 100%;
         }
 
         table {
@@ -434,45 +425,45 @@
         }
 
         th {
-            background-color: var(--green-dark);
-            color: #FFFFFF;
+            background-color: var(--deep-blue);
+            color: var(--yellow-main);
             padding: 1.3rem;
             font-weight: 700;
         }
 
         td {
             padding: 1.1rem 1.3rem;
-            border-bottom: 1px solid var(--green-border);
+            border-bottom: 1px solid #E2E8F0;
             color: var(--text-muted);
             font-weight: 500;
         }
 
         tr:nth-child(even) {
-            background-color: var(--green-subtle);
+            background-color: var(--purple-light);
         }
 
-        /* Full-Width Contact Card */
+        /* Full Screen Contact Section */
         .contact-card {
-            background: linear-gradient(135deg, #092318 0%, #061A12 100%);
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1E1B4B 100%);
             border-radius: 28px;
-            padding: 4.8rem 2rem;
+            padding: 5rem 3rem;
             color: #FFFFFF;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            border: 2px solid var(--yellow-main);
         }
 
         .contact-card h2 { 
             color: #FFFFFF; 
             margin-bottom: 1rem; 
-            font-size: 2.6rem; 
+            font-size: 2.8rem; 
         }
 
         .contact-card p { 
             color: #CBD5E1; 
-            max-width: 700px; 
+            max-width: 800px; 
             margin: 0 auto 2.8rem auto; 
-            font-size: 1.15rem; 
+            font-size: 1.2rem; 
         }
 
         .contact-grid {
@@ -488,24 +479,22 @@
             align-items: center;
             gap: 1rem;
             font-size: 1.15rem;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.08);
             padding: 1.1rem 2.2rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-method i {
             width: 48px;
             height: 48px;
-            background: var(--green-primary);
+            background: var(--orange-main);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
             font-size: 1.25rem;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         .contact-method a { 
@@ -513,13 +502,9 @@
             font-weight: 700; 
         }
 
-        .contact-method a:hover {
-            color: #34D399 !important;
-        }
-
         .social-title {
             font-size: 1.1rem;
-            color: #34D399;
+            color: var(--yellow-main);
             text-transform: uppercase;
             letter-spacing: 1.2px;
             font-weight: 700;
@@ -534,50 +519,49 @@
         }
 
         .social-bar a {
-            width: 52px;
-            height: 52px;
-            background: rgba(255, 255, 255, 0.08);
+            width: 54px;
+            height: 54px;
+            background: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
         .social-bar a:hover {
-            background: var(--green-primary);
+            background: var(--orange-main);
             color: #FFFFFF;
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
         }
 
         /* Footer */
         footer {
-            background: #04120C;
+            background: #020617;
             color: #94A3B8;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 3rem;
             text-align: center;
             font-size: 1rem;
             font-weight: 600;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            width: 100%;
+            width: 100vw;
         }
 
         @media (max-width: 992px) {
+            header, section { padding-left: 1.5rem; padding-right: 1.5rem; }
             .nav-container { flex-direction: column; gap: 1rem; }
-            .hero h1 { font-size: 2.4rem; }
+            .hero h1 { font-size: 2.5rem; }
             .process-flow { flex-direction: column; align-items: flex-start; }
             .nav-links { gap: 0.6rem; justify-content: center; }
-            .nav-links a { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
+            .nav-links a { font-size: 0.85rem; padding: 0.3rem 0.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Full-Width Sticky Header -->
+    <!-- Navigation Header -->
     <header>
         <div class="nav-container">
             <a href="#home" class="header-brand">
@@ -597,15 +581,15 @@
         </div>
     </header>
 
-    <!-- Full-Width Hero Banner -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
             <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Agricultural Scientist | Researcher | Climate & Sustainable Development Specialist</span>
             <h1>Connecting <span>Science, Nature, Finance & Markets</span> for Sustainable Development</h1>
             <p class="lead">Working across Agricultural Science, Sustainable Agriculture, Climate Action, Biodiversity Conservation, Carbon Finance, Sustainable Development, and International Markets.</p>
             <div class="hero-btns">
-                <a href="HAILU_RESUME_2026.pdf" download class="btn-gold"><i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)</a>
-                <a href="#projects" class="btn-outline-green"><i class="fa-solid fa-folder-open"></i> Explore Projects</a>
+                <a href="HAILU_RESUME_2026.pdf" download class="btn-orange"><i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)</a>
+                <a href="#projects" class="btn-outline-yellow"><i class="fa-solid fa-folder-open"></i> Explore Projects</a>
             </div>
         </div>
     </section>
@@ -628,13 +612,13 @@
                     <p>I seek long-term partnerships with international investors, foundations, donors, grant-making organizations, NGOs, development agencies, research institutions, governments, and private-sector partners committed to measurable and sustainable impact.</p>
                 </div>
                 <div>
-                    <div class="card" style="border-left: 5px solid var(--green-primary); margin-bottom: 1.8rem;">
+                    <div class="card" style="border-left: 6px solid var(--purple-main); margin-bottom: 1.8rem;">
                         <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
                         <h3>Mission</h3>
                         <p>To connect science, innovation, finance, partnerships, and communities to develop sustainable solutions that improve livelihoods, strengthen climate resilience, protect nature, and create long-term economic and social value.</p>
                     </div>
-                    <div class="card" style="border-left: 5px solid var(--accent-gold);">
-                        <div class="card-icon" style="color: var(--accent-gold); background: #FEF3C7;"><i class="fa-solid fa-eye"></i></div>
+                    <div class="card" style="border-left: 6px solid var(--orange-main);">
+                        <div class="card-icon" style="color: var(--orange-main); background: var(--yellow-light);"><i class="fa-solid fa-eye"></i></div>
                         <h3>Vision</h3>
                         <p>A future where science, sustainable finance, responsible investment, nature, agriculture, and international partnerships work together to create resilient communities and inclusive prosperity.</p>
                     </div>
@@ -644,7 +628,7 @@
     </section>
 
     <!-- At A Glance Section -->
-    <section id="glance" class="bg-slate">
+    <section id="glance" class="bg-purple-tint">
         <div class="container">
             <div class="section-title">
                 <h2>At a Glance</h2>
@@ -692,7 +676,7 @@
                 <h2>Why Partner With Me?</h2>
                 <p>Connecting Local Potential With Global Opportunity</p>
             </div>
-            <p style="text-align: center; max-width: 850px; margin: 0 auto 3.2rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 3.2rem auto;">High-impact development opportunities require technical knowledge, local understanding, trusted relationships, project development capacity, implementation partnerships, and access to wider networks.</p>
             
             <div class="grid-3">
                 <div class="card">
@@ -730,7 +714,7 @@
     </section>
 
     <!-- Expertise Section -->
-    <section id="expertise" class="bg-slate">
+    <section id="expertise" class="bg-green-tint">
         <div class="container">
             <div class="section-title">
                 <h2>Areas of Expertise</h2>
@@ -739,7 +723,7 @@
             
             <div class="grid-3">
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">01</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">01</h4>
                     <h3>Livestock Science & Practical Farming</h3>
                     <div class="pill-list">
                         <span class="pill">Livestock Farm Management</span>
@@ -755,7 +739,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">02</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">02</h4>
                     <h3>Climate, Carbon & Sustainable Finance</h3>
                     <div class="pill-list">
                         <span class="pill">Carbon Credit Development</span>
@@ -768,7 +752,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">03</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">03</h4>
                     <h3>Biodiversity, Nature & Restoration</h3>
                     <div class="pill-list">
                         <span class="pill">Biodiversity Conservation</span>
@@ -782,7 +766,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">04</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">04</h4>
                     <h3>Agriculture & Food Systems</h3>
                     <div class="pill-list">
                         <span class="pill">Sustainable Agriculture</span>
@@ -795,7 +779,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">05</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">05</h4>
                     <h3>Coffee & International Trade</h3>
                     <div class="pill-list">
                         <span class="pill">Sustainable Coffee Production</span>
@@ -807,7 +791,7 @@
                 </div>
 
                 <div class="card">
-                    <h4 style="color: var(--accent-gold); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">06</h4>
+                    <h4 style="color: var(--orange-main); font-size: 0.95rem; font-family: var(--font-display); font-weight: 700;">06</h4>
                     <h3>Community & Inclusive Development</h3>
                     <div class="pill-list">
                         <span class="pill">Youth Empowerment</span>
@@ -865,8 +849,8 @@
         </div>
     </section>
 
-    <!-- Peer-Reviewed Publications -->
-    <section id="publications" class="bg-slate">
+    <!-- Publications Section -->
+    <section id="publications" class="bg-purple-tint">
         <div class="container">
             <div class="section-title">
                 <h2>Peer-Reviewed Publications</h2>
@@ -878,21 +862,21 @@
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Assessment on rearing and husbandry practices of indigenous goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-glow);">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
+                    <p style="font-size: 0.88rem; color: var(--purple-main);">Publisher: Taylor & Francis Group | DOI: 10.1080/09712119.2023.2185625</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>Journal of Applied Animal Research (2023)</h4>
                     <p><strong>"Phenotypic characterization of indigenous sheep breeds in the Jimma Zone, Oromia, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-glow);">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
+                    <p style="font-size: 0.88rem; color: var(--purple-main);">Authors: Yaregal Derbie & Hailu Tilahun | Publisher: Taylor & Francis Group</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-book"></i></div>
                     <h4>IJRSAS (2019)</h4>
                     <p><strong>"Phenotypic Characterization of Indigenous Goats in North Shewa Zone, Amhara Region, Ethiopia"</strong></p>
-                    <p style="font-size: 0.88rem; color: var(--green-glow);">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
+                    <p style="font-size: 0.88rem; color: var(--purple-main);">Hailu Tilahun, Aynalem Haile, Ahmed Seid | Vol 5, Issue 7, pp. 44-55</p>
                 </div>
             </div>
         </div>
@@ -977,7 +961,7 @@
     </section>
 
     <!-- Partnerships Section -->
-    <section id="partnerships" class="bg-slate">
+    <section id="partnerships" class="bg-green-tint">
         <div class="container">
             <div class="section-title">
                 <h2>Partnership Opportunities</h2>
@@ -1019,7 +1003,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; color: var(--green-dark);">Opportunity Focus & Partnership Types</h3>
+            <h3 style="margin-bottom: 1.5rem; color: var(--purple-main);">Opportunity Focus & Partnership Types</h3>
             <div class="table-responsive" style="margin-bottom: 3.2rem;">
                 <table>
                     <thead>
@@ -1064,7 +1048,7 @@
                 </table>
             </div>
 
-            <h3 style="color: var(--green-dark);">Partnership Packages & Collaboration Models</h3>
+            <h3 style="color: var(--purple-main);">Partnership Packages & Collaboration Models</h3>
             <div class="grid-3" style="margin-top: 1.5rem;">
                 <div class="card">
                     <h4>1. Research Partnership</h4>
@@ -1094,15 +1078,15 @@
 
             <div class="process-flow">
                 <div class="process-step"><i class="fa-solid fa-lightbulb"></i> Concept</div>
-                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--yellow-main);"></i>
                 <div class="process-step"><i class="fa-solid fa-pen-ruler"></i> Project Design</div>
-                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--yellow-main);"></i>
                 <div class="process-step"><i class="fa-solid fa-handshake"></i> Partnership</div>
-                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--yellow-main);"></i>
                 <div class="process-step"><i class="fa-solid fa-coins"></i> Financing</div>
-                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--yellow-main);"></i>
                 <div class="process-step"><i class="fa-solid fa-gears"></i> Implementation</div>
-                <i class="fa-solid fa-chevron-right" style="color: #34D399;"></i>
+                <i class="fa-solid fa-chevron-right" style="color: var(--yellow-main);"></i>
                 <div class="process-step"><i class="fa-solid fa-chart-line"></i> Monitoring & Impact</div>
             </div>
         </div>
@@ -1138,7 +1122,7 @@
     </section>
 
     <!-- Consulting Services -->
-    <section id="consulting" class="bg-slate">
+    <section id="consulting" class="bg-purple-tint">
         <div class="container">
             <div class="section-title">
                 <h2>Consultations for Organizations</h2>
@@ -1179,7 +1163,7 @@
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 2.8rem; background: var(--green-subtle); border-color: var(--green-border);">
+            <div class="card" style="margin-top: 2.8rem; background: var(--green-light); border-color: var(--green-main);">
                 <h3>Transparency & Accountability Commitment</h3>
                 <p>I am committed to professional standards of transparency, accountability, ethical conduct, responsible resource management, evidence-based decision-making, and measurable results. For funded projects and partnerships, appropriate documentation may include:</p>
                 <div class="pill-list">
@@ -1199,16 +1183,16 @@
     </section>
 
     <!-- Geographic Focus -->
-    <section class="bg-white" style="padding: 4rem 2rem;">
+    <section class="bg-white" style="padding: 4rem 3rem;">
         <div class="container" style="text-align: center;">
-            <h3 style="color: var(--green-dark);">Geographic Focus</h3>
-            <p style="font-size: 1.2rem; color: var(--green-primary); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
-            <p style="max-width: 800px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
+            <h3 style="color: var(--purple-main);">Geographic Focus</h3>
+            <p style="font-size: 1.25rem; color: var(--green-main); font-weight: 700; margin-top: 0.5rem;">Ethiopia | East Africa | Africa | International</p>
+            <p style="max-width: 900px; margin: 0.5rem auto 0 auto;">With Ethiopia as a primary base, I work with local and international partners to develop initiatives that can be implemented, tested, and scaled across communities and wider regional contexts.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-slate">
+    <section id="contact" class="bg-purple-tint">
         <div class="container">
             <div class="contact-card">
                 <h2>Let's Build Sustainable Solutions Together</h2>
@@ -1218,14 +1202,14 @@
                     <div class="contact-method">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <div style="font-size: 0.82rem; color: #34D399; text-align: left;">Direct Email</div>
+                            <div style="font-size: 0.85rem; color: var(--yellow-main); text-align: left;">Direct Email</div>
                             <a href="mailto:hailshtilahun@gmail.com">hailshtilahun@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-method">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div>
-                            <div style="font-size: 0.82rem; color: #34D399; text-align: left;">WhatsApp / Mobile</div>
+                            <div style="font-size: 0.85rem; color: var(--yellow-main); text-align: left;">WhatsApp / Mobile</div>
                             <a href="https://wa.me/251910204390">+251 910 204 390</a>
                         </div>
                     </div>
